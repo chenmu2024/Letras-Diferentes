@@ -442,8 +442,10 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#FBFBFE] text-[#0F172A] font-sans antialiased flex flex-col relative selection:bg-indigo-500/10 selection:text-indigo-900">
       {/* Premium dynamic gradient background glows */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-indigo-300/10 to-violet-300/10 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-gradient-to-tr from-pink-200/10 to-indigo-300/5 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-indigo-300/10 to-violet-300/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-gradient-to-tr from-pink-200/10 to-indigo-300/5 rounded-full blur-3xl" />
+      </div>
 
       {/* Floating global glass notification toast */}
       {toastMessage && (
@@ -505,10 +507,10 @@ export default function App() {
                   aria-label="Selecionar ferramenta"
                 >
                   <span className="text-[#4F46E5] shrink-0 bg-indigo-50 p-1 rounded-lg">{activeTabItem.icon}</span>
-                  <span className="uppercase tracking-wider hidden sm:inline">
+                  <span className="uppercase tracking-wider hidden sm:inline-block sm:w-[210px] text-left truncate">
                     Seletor: <strong className="text-[#4F46E5] font-extrabold">{activeTabItem.label}</strong>
                   </span>
-                  <span className="uppercase tracking-wider inline sm:hidden text-[#4F46E5]">
+                  <span className="uppercase tracking-wider inline-block sm:hidden w-[65px] text-left truncate text-[#4F46E5]">
                     {activeTabItem.label.split(" ")[0]}
                   </span>
                   <ChevronDown className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-300 ${dropdownOpen ? "rotate-180" : ""}`} />
