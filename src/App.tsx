@@ -1,20 +1,21 @@
-import React, { useState, useEffect, useRef, useMemo } from "react";
-import GeradorLetras from "./components/GeradorLetras";
-import LetrasTatuagem from "./components/LetrasTatuagem";
-import LetrasGrafite from "./components/LetrasGrafite";
-import LetrasPequenas from "./components/LetrasPequenas";
-import MoldesLetras from "./components/MoldesLetras";
-import NicksFreeFire from "./components/NicksFreeFire";
-import LetrasMaiusculas from "./components/LetrasMaiusculas";
-import LetrasLibras from "./components/LetrasLibras";
-import TermoHelper from "./components/TermoHelper";
-import StopRespostas from "./components/StopRespostas";
-import SobreNos from "./components/SobreNos";
-import Contato from "./components/Contato";
-import PoliticaPrivacidade from "./components/PoliticaPrivacidade";
-import TermosServico from "./components/TermosServico";
-import CookieConsent from "./components/CookieConsent";
+import React, { useState, useEffect, useRef, useMemo, lazy, Suspense } from "react";
 import AdSensePlaceholder from "./components/AdSensePlaceholder";
+import CookieConsent from "./components/CookieConsent";
+
+const GeradorLetras = lazy(() => import("./components/GeradorLetras"));
+const LetrasTatuagem = lazy(() => import("./components/LetrasTatuagem"));
+const LetrasGrafite = lazy(() => import("./components/LetrasGrafite"));
+const LetrasPequenas = lazy(() => import("./components/LetrasPequenas"));
+const MoldesLetras = lazy(() => import("./components/MoldesLetras"));
+const NicksFreeFire = lazy(() => import("./components/NicksFreeFire"));
+const LetrasMaiusculas = lazy(() => import("./components/LetrasMaiusculas"));
+const LetrasLibras = lazy(() => import("./components/LetrasLibras"));
+const TermoHelper = lazy(() => import("./components/TermoHelper"));
+const StopRespostas = lazy(() => import("./components/StopRespostas"));
+const SobreNos = lazy(() => import("./components/SobreNos"));
+const Contato = lazy(() => import("./components/Contato"));
+const PoliticaPrivacidade = lazy(() => import("./components/PoliticaPrivacidade"));
+const TermosServico = lazy(() => import("./components/TermosServico"));
 
 import {
   Sparkles,
@@ -643,20 +644,27 @@ export default function App() {
 
         {/* Isolated content view rendering based on tabId */}
         <div className="animate-fade-in transition-all duration-300">
-          {activeTab === "home" && <GeradorLetras onNotify={triggerToast} onNavigate={handleTabChange} />}
-          {activeTab === "tatuagem" && <LetrasTatuagem onNotify={triggerToast} />}
-          {activeTab === "grafite" && <LetrasGrafite onNotify={triggerToast} />}
-          {activeTab === "pequenas" && <LetrasPequenas onNotify={triggerToast} />}
-          {activeTab === "moldes" && <MoldesLetras onNotify={triggerToast} />}
-          {activeTab === "ff-nicks" && <NicksFreeFire onNotify={triggerToast} />}
-          {activeTab === "maiusculas" && <LetrasMaiusculas onNotify={triggerToast} />}
-          {activeTab === "libras" && <LetrasLibras onNotify={triggerToast} />}
-          {activeTab === "termo-helper" && <TermoHelper onNotify={triggerToast} />}
-          {activeTab === "stop-respostas" && <StopRespostas onNotify={triggerToast} />}
-          {activeTab === "sobre" && <SobreNos />}
-          {activeTab === "contato" && <Contato onNotify={triggerToast} />}
-          {activeTab === "privacidade" && <PoliticaPrivacidade />}
-          {activeTab === "termos" && <TermosServico />}
+          <Suspense fallback={
+            <div className="min-h-[350px] flex flex-col items-center justify-center text-slate-400 gap-3 py-16">
+              <div className="w-8 h-8 border-3 border-indigo-500/10 border-t-indigo-600 rounded-full animate-spin" />
+              <span className="font-mono text-xs tracking-wider uppercase font-semibold">Carregando módulo...</span>
+            </div>
+          }>
+            {activeTab === "home" && <GeradorLetras onNotify={triggerToast} onNavigate={handleTabChange} />}
+            {activeTab === "tatuagem" && <LetrasTatuagem onNotify={triggerToast} />}
+            {activeTab === "grafite" && <LetrasGrafite onNotify={triggerToast} />}
+            {activeTab === "pequenas" && <LetrasPequenas onNotify={triggerToast} />}
+            {activeTab === "moldes" && <MoldesLetras onNotify={triggerToast} />}
+            {activeTab === "ff-nicks" && <NicksFreeFire onNotify={triggerToast} />}
+            {activeTab === "maiusculas" && <LetrasMaiusculas onNotify={triggerToast} />}
+            {activeTab === "libras" && <LetrasLibras onNotify={triggerToast} />}
+            {activeTab === "termo-helper" && <TermoHelper onNotify={triggerToast} />}
+            {activeTab === "stop-respostas" && <StopRespostas onNotify={triggerToast} />}
+            {activeTab === "sobre" && <SobreNos />}
+            {activeTab === "contato" && <Contato onNotify={triggerToast} />}
+            {activeTab === "privacidade" && <PoliticaPrivacidade />}
+            {activeTab === "termos" && <TermosServico />}
+          </Suspense>
         </div>
 
         {/* Global Responsive AdSense Display Unit placeholder */}

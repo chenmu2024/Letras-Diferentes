@@ -10,6 +10,10 @@ if (typeof document !== "undefined") {
     link.id = linkId;
     link.rel = "stylesheet";
     link.href = "https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Sacramento&family=Pirata+One&family=Pinyon+Script&family=UnifrakturMaguntia&family=Alex+Brush&family=Parisienne&family=Monsieur+La+Doulaise&family=Arizonia&family=Playfair+Display:ital,wght@1,700&display=swap";
+    link.media = "print";
+    link.onload = function() {
+      (this as any).media = "all";
+    };
     document.head.appendChild(link);
   }
 }
