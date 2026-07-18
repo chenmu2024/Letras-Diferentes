@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Página Principal / Gerador Principal -->
+  <url>
+    <loc>https://letradiferentes.org/</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Letras para Tatuagem -->
+  <url>
+    <loc>https://letradiferentes.org/#tatuagem</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Letras de Grafite -->
+  <url>
+    <loc>https://letradiferentes.org/#grafite</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Letras Pequenas -->
+  <url>
+    <loc>https://letradiferentes.org/#pequenas</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Moldes de Letras -->
+  <url>
+    <loc>https://letradiferentes.org/#moldes</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Nicks Free Fire e Símbolos -->
+  <url>
+    <loc>https://letradiferentes.org/#ff-nicks</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Letras Maiúsculas e Minúsculas -->
+  <url>
+    <loc>https://letradiferentes.org/#maiusculas</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Letras em Libras -->
+  <url>
+    <loc>https://letradiferentes.org/#libras</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Termo Helper -->
+  <url>
+    <loc>https://letradiferentes.org/#termo-helper</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Respostas do Stop / Adedanha -->
+  <url>
+    <loc>https://letradiferentes.org/#stop-respostas</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Institucional: Sobre Nós -->
+  <url>
+    <loc>https://letradiferentes.org/#sobre</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Institucional: Contato -->
+  <url>
+    <loc>https://letradiferentes.org/#contato</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Institucional: Política de Privacidade -->
+  <url>
+    <loc>https://letradiferentes.org/#privacidade</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Institucional: Termos de Serviço -->
+  <url>
+    <loc>https://letradiferentes.org/#termos</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>

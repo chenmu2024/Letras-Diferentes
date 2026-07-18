@@ -1,0 +1,6 @@
+{
+  "name": "LetrasDiferentes",
+  "description": "LetrasDiferentes (letradiferentes.org) - O maior e mais seguro portal brasileiro de letras diferentes, geradores de fontes, moldes para recorte, alfabeto em Libras, símbolos para Free Fire e utilitários de texto 100% independentes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
