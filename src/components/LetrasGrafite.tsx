@@ -175,8 +175,20 @@ export default function LetrasGrafite({ onNotify }: LetrasGrafiteProps) {
 
   useEffect(() => {
     syncCanvasSize();
-    window.addEventListener("resize", syncCanvasSize);
-    return () => window.removeEventListener("resize", syncCanvasSize);
+    
+    let resizeTimeout: ReturnType<typeof setTimeout>;
+    const handleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        syncCanvasSize();
+      }, 150);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      clearTimeout(resizeTimeout);
+    };
   }, []);
 
   const getMousePos = (
