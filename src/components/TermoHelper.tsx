@@ -303,8 +303,10 @@ export default function TermoHelper({ onNotify }: TermoHelperProps) {
               </span>
               
               <div className="flex items-center gap-2">
-                <span className="text-[10px] text-slate-400 font-mono font-bold uppercase tracking-wider">Ordenação:</span>
+                <label htmlFor="termo-sort" className="text-[10px] text-slate-400 font-mono font-bold uppercase tracking-wider cursor-pointer">Ordenação:</label>
                 <select
+                  id="termo-sort"
+                  aria-label="Ordenação das palavras possíveis"
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as "score" | "alpha")}
                   className="bg-slate-50 border border-slate-200 rounded-xl px-2.5 py-1 text-[11px] font-bold text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500/15"

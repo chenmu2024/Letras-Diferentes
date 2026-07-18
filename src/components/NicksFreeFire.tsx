@@ -268,10 +268,12 @@ export default function NicksFreeFire({ onNotify }: NicksFreeFireProps) {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 pt-2">
           {/* 1. Prefix Selector */}
           <div className="space-y-1.5">
-            <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block font-mono">
+            <label htmlFor="builder-prefix" className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block font-mono cursor-pointer">
               1. Decoração Esquerda para letras diferentes ff:
             </label>
             <select
+              id="builder-prefix"
+              aria-label="Decoração Esquerda para letras diferentes ff"
               value={builderPrefix}
               onChange={(e) => setBuilderPrefix(e.target.value)}
               className="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2.5 text-xs text-white font-mono focus:outline-none focus:ring-2 focus:ring-orange-500/50"
@@ -284,10 +286,12 @@ export default function NicksFreeFire({ onNotify }: NicksFreeFireProps) {
 
           {/* 2. Core Name Input */}
           <div className="space-y-1.5">
-            <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block font-mono">
+            <label htmlFor="builder-name" className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block font-mono cursor-pointer">
               2. Nome de Guerra com letras diferentes ff:
             </label>
             <input
+              id="builder-name"
+              aria-label="Nome de Guerra com letras diferentes ff"
               type="text"
               value={builderName}
               onChange={(e) => setBuilderName(e.target.value.toUpperCase())}
@@ -299,10 +303,12 @@ export default function NicksFreeFire({ onNotify }: NicksFreeFireProps) {
 
           {/* 3. Space Selector */}
           <div className="space-y-1.5">
-            <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block font-mono">
+            <label htmlFor="builder-space" className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block font-mono cursor-pointer">
               3. Tipo de Espaço para letras diferentes ff:
             </label>
             <select
+              id="builder-space"
+              aria-label="Tipo de Espaço para letras diferentes ff"
               value={builderSpace}
               onChange={(e) => setBuilderSpace(e.target.value)}
               className="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:ring-2 focus:ring-orange-500/50"
@@ -315,10 +321,12 @@ export default function NicksFreeFire({ onNotify }: NicksFreeFireProps) {
 
           {/* 4. Suffix Tag Selector */}
           <div className="space-y-1.5">
-            <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block font-mono">
+            <label htmlFor="builder-tag" className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block font-mono cursor-pointer">
               4. Símbolo Final das letras diferentes ff:
             </label>
             <select
+              id="builder-tag"
+              aria-label="Símbolo Final das letras diferentes ff"
               value={builderTag}
               onChange={(e) => setBuilderTag(e.target.value)}
               className="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2.5 text-xs text-white font-mono focus:outline-none focus:ring-2 focus:ring-orange-500/50"

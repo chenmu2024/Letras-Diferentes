@@ -179,8 +179,10 @@ export default function LetrasLibras({ onNotify }: LetrasLibrasProps) {
           {/* Controls column */}
           <div className="md:col-span-1 space-y-4">
             <div className="space-y-1">
-              <label className="text-[10px] font-black text-slate-400 uppercase tracking-wider font-mono">Palavra ou Nome:</label>
+              <label htmlFor="libras-input" className="text-[10px] font-black text-slate-400 uppercase tracking-wider font-mono cursor-pointer">Palavra ou Nome:</label>
               <input
+                id="libras-input"
+                aria-label="Palavra ou Nome em Libras"
                 type="text"
                 value={spellerText}
                 onChange={(e) => handleSpellTextChange(e.target.value)}
@@ -193,10 +195,12 @@ export default function LetrasLibras({ onNotify }: LetrasLibrasProps) {
             {/* Speed Control Slider */}
             <div className="bg-slate-50 p-3 rounded-2xl border border-slate-150 space-y-1.5">
               <div className="flex justify-between items-center text-[10px] font-bold text-slate-500 uppercase tracking-wider font-mono">
-                <span>Velocidade de Soletração</span>
+                <label htmlFor="libras-speed" className="cursor-pointer">Velocidade de Soletração</label>
                 <span className="text-indigo-600">{(spellSpeed / 1000).toFixed(1)}s / letra</span>
               </div>
               <input
+                id="libras-speed"
+                aria-label="Velocidade de Soletração"
                 type="range"
                 min="500"
                 max="3000"

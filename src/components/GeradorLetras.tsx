@@ -488,12 +488,14 @@ export default function GeradorLetras({ onNotify, onNavigate }: GeradorLetrasPro
         {/* Font Size Slider */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-5 border-t border-slate-100/80">
           <div className="flex items-center gap-2">
-            <span className="text-xs font-bold text-slate-500 uppercase tracking-wider font-mono">Tamanho da Fonte:</span>
+            <label htmlFor="font-size-slider" className="text-xs font-bold text-slate-500 uppercase tracking-wider font-mono cursor-pointer">Tamanho da Fonte:</label>
             <span className="text-xs font-black text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-lg font-mono">{fontSize}px</span>
           </div>
           <div className="flex items-center gap-3 w-full sm:w-64">
             <span className="text-xs text-slate-400 font-bold font-mono">A</span>
             <input
+              id="font-size-slider"
+              aria-label="Tamanho da fonte"
               type="range"
               min="14"
               max="36"

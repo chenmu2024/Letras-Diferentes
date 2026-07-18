@@ -44,10 +44,12 @@ export default function SocialPreviewer({ inputText, fontStyles }: SocialPreview
         <div className="space-y-4 md:col-span-1">
           {/* Style Selector */}
           <div className="space-y-2">
-            <label className="text-[10px] font-extrabold text-[#0F172A] uppercase tracking-widest font-mono block">
+            <label htmlFor="style-selector" className="text-[10px] font-extrabold text-[#0F172A] uppercase tracking-widest font-mono block cursor-pointer">
               1. Escolha o Estilo de Letra:
             </label>
             <select
+              id="style-selector"
+              aria-label="Escolha o Estilo de Letra"
               value={selectedStyleIndex}
               onChange={(e) => setSelectedStyleIndex(Number(e.target.value))}
               className="w-full bg-slate-50 hover:bg-slate-100/80 border border-slate-200 text-slate-800 text-xs font-bold rounded-xl px-3 py-2.5 transition-all focus:outline-none focus:ring-4 focus:ring-indigo-500/5 focus:border-[#4F46E5] cursor-pointer"

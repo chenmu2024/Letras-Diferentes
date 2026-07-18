@@ -532,8 +532,10 @@ export default function StopRespostas({ onNotify }: StopRespostasProps) {
 
         <form onSubmit={handleAddCustomWord} className="grid grid-cols-1 sm:grid-cols-12 gap-4 items-end">
           <div className="sm:col-span-3 space-y-1.5">
-            <label className="text-[10px] font-black text-slate-400 uppercase tracking-wider font-mono">Letra do Alfabeto</label>
+            <label htmlFor="custom-letter" className="text-[10px] font-black text-slate-400 uppercase tracking-wider font-mono cursor-pointer">Letra do Alfabeto</label>
             <select
+              id="custom-letter"
+              aria-label="Letra do Alfabeto"
               value={newCustomLetter}
               onChange={(e) => setNewCustomLetter(e.target.value)}
               className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs font-bold text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500/15"
@@ -547,8 +549,10 @@ export default function StopRespostas({ onNotify }: StopRespostasProps) {
           </div>
 
           <div className="sm:col-span-4 space-y-1.5">
-            <label className="text-[10px] font-black text-slate-400 uppercase tracking-wider font-mono">Categoria / Tema</label>
+            <label htmlFor="custom-category" className="text-[10px] font-black text-slate-400 uppercase tracking-wider font-mono cursor-pointer">Categoria / Tema</label>
             <select
+              id="custom-category"
+              aria-label="Categoria / Tema"
               value={newCustomCat}
               onChange={(e) => setNewCustomCat(e.target.value)}
               className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs font-bold text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500/15"
@@ -562,8 +566,10 @@ export default function StopRespostas({ onNotify }: StopRespostasProps) {
           </div>
 
           <div className="sm:col-span-3 space-y-1.5">
-            <label className="text-[10px] font-black text-slate-400 uppercase tracking-wider font-mono">Palavra (Deve iniciar com {newCustomLetter})</label>
+            <label htmlFor="custom-word" className="text-[10px] font-black text-slate-400 uppercase tracking-wider font-mono cursor-pointer">Palavra (Deve iniciar com {newCustomLetter})</label>
             <input
+              id="custom-word"
+              aria-label={`Palavra iniciada com ${newCustomLetter}`}
               type="text"
               value={newCustomWord}
               onChange={(e) => setNewCustomWord(e.target.value)}

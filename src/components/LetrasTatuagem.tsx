@@ -543,12 +543,14 @@ export default function LetrasTatuagem({ onNotify }: LetrasTatuagemProps) {
                 {/* Text bending/curvature slider */}
                 <div className="space-y-1.5">
                   <div className="flex justify-between text-[10px] text-[#0F172A] font-mono uppercase tracking-widest">
-                    <span className="font-extrabold">Curvatura do Texto (Arco):</span>
+                    <label htmlFor="tat-curvature" className="font-extrabold cursor-pointer">Curvatura do Texto (Arco):</label>
                     <span className="font-black text-amber-600">
                       {curvature === 0 ? "Reto" : curvature > 0 ? `Sorrindo (${curvature})` : `Arco (${curvature})`}
                     </span>
                   </div>
                   <input
+                    id="tat-curvature"
+                    aria-label="Curvatura do Texto (Arco)"
                     type="range"
                     min="-80"
                     max="80"
@@ -564,10 +566,12 @@ export default function LetrasTatuagem({ onNotify }: LetrasTatuagemProps) {
                 {/* Font Size Adjust */}
                 <div className="space-y-1.5">
                   <div className="flex justify-between text-[10px] text-[#0F172A] font-mono uppercase tracking-widest">
-                    <span className="font-extrabold">Escala da Arte:</span>
+                    <label htmlFor="tat-scale" className="font-extrabold cursor-pointer">Escala da Arte:</label>
                     <span className="font-black text-amber-600">{fontSize}px</span>
                   </div>
                   <input
+                    id="tat-scale"
+                    aria-label="Escala da Arte"
                     type="range"
                     min="20"
                     max="72"
@@ -608,10 +612,12 @@ export default function LetrasTatuagem({ onNotify }: LetrasTatuagemProps) {
                 {/* Angle / Tilt Adjuster */}
                 <div className="space-y-1.5">
                   <div className="flex justify-between text-[10px] text-[#0F172A] font-mono uppercase tracking-widest">
-                    <span className="font-extrabold">Angulação da Escrita:</span>
+                    <label htmlFor="tat-angle" className="font-extrabold cursor-pointer">Angulação da Escrita:</label>
                     <span className="font-black text-amber-600">{tiltAngle}°</span>
                   </div>
                   <input
+                    id="tat-angle"
+                    aria-label="Angulação da Escrita"
                     type="range"
                     min="-45"
                     max="45"

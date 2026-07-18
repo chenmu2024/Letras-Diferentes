@@ -1,0 +1,20 @@
+# LetraDiferentes - Gerador de Letras Diferentes e Fontes Bonitas
+
+[LetraDiferentes](https://letradiferentes.org) é o maior portal gratuito e modular para conversão de fontes estilosas online, com suporte nativo ao padrão Unicode para mídias sociais e jogos competitivos.
+
+## Principais Ferramentas e Recursos
+
+- [Gerador de Letras Diferentes](https://letradiferentes.org/#home) - Converta textos comuns em dezenas de fontes estilizadas e personalizadas instantaneamente.
+- [Gerador de Nicks para Free Fire](https://letradiferentes.org/#nicks) - Crie apelidos personalizados com decorações, símbolos exóticos e espaços invisíveis prontos para copiar.
+- [Fontes de Letras para Tatuagem](https://letradiferentes.org/#tatuagem) - Desenhe caligrafias personalizadas, ajuste a curvatura (arco), angulação e escala para simulação artística.
+- [Gerador de Letras de Grafite](https://letradiferentes.org/#grafite) - Crie e baixe artes estilizadas de grafite em vetor SVG com preenchimentos e contornos customizáveis.
+- [Letras Grandes em Libras](https://letradiferentes.org/#libras) - Soletração interativa em Língua Brasileira de Sinais com simulação e controle de velocidade.
+- [Letras Pequenas (Subscritas e Sobrescritas)](https://letradiferentes.org/#pequenas) - Formate pequenos textos estilizados para mídias sociais e feeds.
+- [Letras Maiúsculas e Conversor de Caixa](https://letradiferentes.org/#maiusculas) - Transforme textos em caixa alta exótica, alternada, reversa ou invertida.
+- [Simulador de Redes Sociais](https://letradiferentes.org/#previewer) - Teste em tempo real a exibição das suas fontes customizadas em postagens e perfis simulados.
+
+## Vantagens e Tecnologia
+
+- **100% Baseado em Unicode**: Todos os estilos de letra diferentes produzidos funcionam perfeitamente sem necessidade de instalação de arquivos de fontes (.ttf/.otf) no receptor.
+- **Processamento no Cliente**: A conversão de texto é realizada de forma segura no próprio navegador, garantindo que nenhum dado sensível seja transmitido ou armazenado.
+- **Leve e Rápido**: Desenvolvido em React e Tailwind CSS para oferecer transições instantâneas, total compatibilidade mobile e zero anúncios intrusivos.
