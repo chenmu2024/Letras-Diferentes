@@ -532,6 +532,8 @@ export default function MoldesLetras({ onNotify }: MoldesLetrasProps) {
             {/* Vector letter rendering inside SVG for perfect centering */}
             <div className="flex-1 w-full flex items-center justify-center relative">
               <svg 
+                width="350"
+                height="350"
                 className="w-full h-full max-h-[280px] md:max-h-[320px]" 
                 viewBox="0 0 350 350" 
                 xmlns="http://www.w3.org/2000/svg"
@@ -641,6 +643,8 @@ export default function MoldesLetras({ onNotify }: MoldesLetrasProps) {
             {/* Mold vector rendering inside SVG */}
             <div className="flex-1 w-full flex items-center justify-center">
               <svg 
+                width="400"
+                height="400"
                 className="w-full h-[210mm] max-h-[85%]" 
                 viewBox="0 0 400 400" 
                 xmlns="http://www.w3.org/2000/svg"

@@ -11,7 +11,7 @@ export interface LibrasSign {
 // This is extremely light-weight, clean, and has high accessibility value.
 const makeHandSign = (fingerHeights: number[], thumbPos: "left" | "right" | "center" | "tucked", arrowDirection?: "up" | "circle" | "none") => {
   return (
-    <svg className="w-full h-full text-current" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="100" height="100" className="w-full h-full text-current" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
       {/* Wrist / Palm base */}
       <rect x="35" y="60" width="30" height="25" rx="6" fill="currentColor" opacity="0.15" stroke="currentColor" strokeWidth="2.5" />
       {/* Palm Main */}

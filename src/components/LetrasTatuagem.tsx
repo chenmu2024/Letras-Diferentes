@@ -319,6 +319,8 @@ export default function LetrasTatuagem({ onNotify }: LetrasTatuagemProps) {
 
     return (
       <svg
+        width="800"
+        height="400"
         viewBox="0 0 800 400"
         className="w-full h-full transition-all duration-300 max-h-full"
         style={{

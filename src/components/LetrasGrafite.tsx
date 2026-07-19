@@ -523,7 +523,7 @@ export default function LetrasGrafite({ onNotify }: LetrasGrafiteProps) {
     }
 
     return (
-      <svg className="w-11 h-11 inline-block drop-shadow-md overflow-visible" viewBox="0 0 100 100">
+      <svg width="44" height="44" className="w-11 h-11 inline-block drop-shadow-md overflow-visible" viewBox="0 0 100 100">
         <defs>
           <radialGradient id={`glow-${letter}-${styleToRender}`} cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#fff" stopOpacity="0.4" />
@@ -1743,6 +1743,8 @@ export default function LetrasGrafite({ onNotify }: LetrasGrafiteProps) {
             {/* Inline live vector SVG preview representation (pointer events disabled to let spray paint clicks pass through) */}
             <div className="relative z-20 w-full max-w-2xl aspect-[800/300] mx-auto flex items-center justify-center select-none py-4 pointer-events-none">
               <svg
+                width="800"
+                height="300"
                 viewBox="0 0 800 300"
                 className="w-full h-auto drop-shadow-[0_12px_24px_rgba(0,0,0,0.45)]"
               >
