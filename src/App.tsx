@@ -66,38 +66,52 @@ export default function App() {
 
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Synchronize tab selections with the URL hash
+  // Synchronize tab selections with BOTH URL pathname and URL hash
   useEffect(() => {
-    const handleHashChange = () => {
+    const handleNavigation = () => {
+      const path = window.location.pathname.replace(/^\/+/, "");
       const hash = window.location.hash.replace("#", "");
-      if (hash) {
-        // Find if matches valid tab
-        const validTabs: TabId[] = [
-          "home",
-          "tatuagem",
-          "grafite",
-          "pequenas",
-          "moldes",
-          "ff-nicks",
-          "maiusculas",
-          "libras",
-          "termo-helper",
-          "stop-respostas",
-          "sobre",
-          "contato",
-          "privacidade",
-          "termos"
-        ];
-        if (validTabs.includes(hash as TabId)) {
-          setActiveTab(hash as TabId);
-        }
+      
+      const validTabs: TabId[] = [
+        "home",
+        "tatuagem",
+        "grafite",
+        "pequenas",
+        "moldes",
+        "ff-nicks",
+        "maiusculas",
+        "libras",
+        "termo-helper",
+        "stop-respostas",
+        "sobre",
+        "contato",
+        "privacidade",
+        "termos"
+      ];
+
+      // Primary check: URL pathname (e.g. /tatuagem)
+      if (validTabs.includes(path as TabId)) {
+        setActiveTab(path as TabId);
+      } 
+      // Secondary check / legacy fallback: Hash (e.g. /#tatuagem)
+      else if (validTabs.includes(hash as TabId)) {
+        setActiveTab(hash as TabId);
+        // Silently upgrade hash to clean URL path
+        const newPath = hash === "home" ? "/" : `/${hash}`;
+        window.history.replaceState({ tabId: hash }, "", newPath);
+      } else {
+        setActiveTab("home");
       }
     };
 
-    window.addEventListener("hashchange", handleHashChange);
-    handleHashChange(); // Trigger on mount
+    window.addEventListener("popstate", handleNavigation);
+    window.addEventListener("hashchange", handleNavigation);
+    handleNavigation(); // Trigger on mount
 
-    return () => window.removeEventListener("hashchange", handleHashChange);
+    return () => {
+      window.removeEventListener("popstate", handleNavigation);
+      window.removeEventListener("hashchange", handleNavigation);
+    };
   }, []);
 
   // Dropdown close on click outside
@@ -119,13 +133,84 @@ export default function App() {
         desc: "O maior gerador de letras diferentes e bonitas online. Copie e cole dezenas de fontes elegantes no Instagram, TikTok, WhatsApp e mídias sociais.",
         schema: {
           "@context": "https://schema.org",
-          "@type": "WebApplication",
-          "name": "LetraDiferentes",
-          "url": "https://letradiferentes.org",
-          "description": "O maior gerador de letras diferentes e bonitas online. Copie e cole dezenas de fontes elegantes no Instagram, TikTok, WhatsApp e mídias sociais.",
-          "applicationCategory": "UtilityApplication",
-          "operatingSystem": "All",
-          "browserRequirements": "Requires JavaScript. Requires HTML5."
+          "@graph": [
+            {
+              "@type": "WebSite",
+              "@id": "https://letradiferentes.org/#website",
+              "name": "Letras Diferentes",
+              "url": "https://letradiferentes.org",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://letradiferentes.org/?s={search_term_string}"
+                },
+                "query-input": "required name=search_term_string"
+              }
+            },
+            {
+              "@type": "WebApplication",
+              "name": "LetraDiferentes",
+              "url": "https://letradiferentes.org",
+              "description": "O maior gerador de letras diferentes e bonitas online. Copie e cole dezenas de fontes elegantes no Instagram, TikTok, WhatsApp e mídias sociais.",
+              "applicationCategory": "UtilityApplication",
+              "operatingSystem": "All",
+              "browserRequirements": "Requires JavaScript. Requires HTML5."
+            },
+            {
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Como copiar e colar letras diferentes e letra diferentes?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "O processo de copiar as letras diferentes e a letra diferentes é automático. Digite seu texto no campo de entrada no início do gerador de letras diferentes e letra diferentes, e clique no botão de cópia ao lado da fonte desejada. Depois, basta colar o estilo de letras diferentes e letra diferentes no local escolhido."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Quais redes sociais aceitam letras diferentes e letra diferentes?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Praticamente todas as redes modernas aceitam nossas letras diferentes e letra diferentes, incluindo Instagram, TikTok, Facebook, Twitter (X), Pinterest e WhatsApp. As letras diferentes e letra diferentes são ótimas para as biografias e descrições desses aplicativos."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "É seguro usar letras diferentes e letra diferentes em jogos?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sim, o uso de letras diferentes e letra diferentes geradas em nosso site é 100% livre e seguro. As letras diferentes e letra diferentes não representam hacks, pois fazem parte das tabelas Unicode originais suportadas pelas desenvolvedoras de jogos como a Garena ou Epic Games."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Por que algumas pessoas pesquisam por letra diferentes no singular?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Muitas vezes, ao buscar um estilo rápido para um único termo ou nick, os usuários digitam \"letra diferentes\" no singular nos mecanismos de busca do Google. Nosso portal é otimizado para responder perfeitamente tanto à pesquisa de \"letras diferentes\" quanto à pesquisa de \"letra diferentes\", oferecendo o mesmo nível de qualidade e velocidade."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Posso usar letras diferentes e letra diferentes no perfil profissional?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sim! O uso estratégico de letras diferentes e letra diferentes ajuda a destacar as principais propostas ou informações da sua marca. Recomendamos usar letras diferentes e letra diferentes em negrito ou sublinhadas para manter uma leitura clara, profissional e convidativa."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Como personalizar mais o meu texto com letras diferentes e letra diferentes?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Nosso painel de letras diferentes e letra diferentes possui uma seção de decorações e nicks onde você pode acrescentar símbolos automáticos no início e no fim do seu texto, enriquecendo ainda mais as suas criações feitas de letras diferentes e letra diferentes."
+                  }
+                }
+              ]
+            }
+          ]
         }
       },
       tatuagem: {
@@ -133,12 +218,33 @@ export default function App() {
         desc: "Crie e visualize moldes de letras para tatuagem grátis. Escolha entre fontes góticas, cursivas e caligráficas para desenhar sua tattoo.",
         schema: {
           "@context": "https://schema.org",
-          "@type": "WebApplication",
-          "name": "Gerador de Letras para Tatuagem",
-          "url": "https://letradiferentes.org/#tatuagem",
-          "description": "Crie e visualize moldes de letras para tatuagem grátis. Escolha entre fontes góticas, cursivas e caligráficas para desenhar sua tattoo.",
-          "applicationCategory": "UtilityApplication",
-          "operatingSystem": "All"
+          "@graph": [
+            {
+              "@type": "WebApplication",
+              "name": "Gerador de Letras para Tatuagem",
+              "url": "https://letradiferentes.org/tatuagem",
+              "description": "Crie e visualize moldes de letras para tatuagem grátis. Escolha entre fontes góticas, cursivas e caligráficas para desenhar sua tattoo.",
+              "applicationCategory": "UtilityApplication",
+              "operatingSystem": "All"
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://letradiferentes.org"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Letras para Tatuagem",
+                  "item": "https://letradiferentes.org/tatuagem"
+                }
+              ]
+            }
+          ]
         }
       },
       grafite: {
@@ -146,12 +252,33 @@ export default function App() {
         desc: "Transforme seu texto em desenhos de letras de grafite de rua impressionantes. Ferramenta grátis para criar assinaturas visuais e artes urbanas.",
         schema: {
           "@context": "https://schema.org",
-          "@type": "WebApplication",
-          "name": "Gerador de Letras de Grafite",
-          "url": "https://letradiferentes.org/#grafite",
-          "description": "Transforme seu texto em desenhos de letras de grafite de rua impressionantes. Ferramenta grátis para criar assinaturas visuais e artes urbanas.",
-          "applicationCategory": "UtilityApplication",
-          "operatingSystem": "All"
+          "@graph": [
+            {
+              "@type": "WebApplication",
+              "name": "Gerador de Letras de Grafite",
+              "url": "https://letradiferentes.org/grafite",
+              "description": "Transforme seu texto em desenhos de letras de grafite de rua impressionantes. Ferramenta grátis para criar assinaturas visuais e artes urbanas.",
+              "applicationCategory": "UtilityApplication",
+              "operatingSystem": "All"
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://letradiferentes.org"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Letras de Grafite",
+                  "item": "https://letradiferentes.org/grafite"
+                }
+              ]
+            }
+          ]
         }
       },
       pequenas: {
@@ -159,12 +286,33 @@ export default function App() {
         desc: "Gerador de letras pequenas e miúdas para colocar no topo do nome ou perfil (subscrito e sobrescrito). Copie e cole grátis no Instagram e WhatsApp.",
         schema: {
           "@context": "https://schema.org",
-          "@type": "WebApplication",
-          "name": "Gerador de Letras Pequenas",
-          "url": "https://letradiferentes.org/#pequenas",
-          "description": "Gerador de letras pequenas e miúdas para colocar no topo do nome ou perfil (subscrito e sobrescrito). Copie e cole grátis no Instagram e WhatsApp.",
-          "applicationCategory": "UtilityApplication",
-          "operatingSystem": "All"
+          "@graph": [
+            {
+              "@type": "WebApplication",
+              "name": "Gerador de Letras Pequenas",
+              "url": "https://letradiferentes.org/pequenas",
+              "description": "Gerador de letras pequenas e miúdas para colocar no topo do nome ou perfil (subscrito e sobrescrito). Copie e cole grátis no Instagram e WhatsApp.",
+              "applicationCategory": "UtilityApplication",
+              "operatingSystem": "All"
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://letradiferentes.org"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Letras Pequenas",
+                  "item": "https://letradiferentes.org/pequenas"
+                }
+              ]
+            }
+          ]
         }
       },
       moldes: {
@@ -172,12 +320,33 @@ export default function App() {
         desc: "Gere moldes de letras grandes para painéis, cartazes, trabalhos escolares e artesanato. Customize a fonte e imprima em tamanho real.",
         schema: {
           "@context": "https://schema.org",
-          "@type": "WebApplication",
-          "name": "Gerador de Moldes de Letras",
-          "url": "https://letradiferentes.org/#moldes",
-          "description": "Gere moldes de letras grandes para painéis, cartazes, trabalhos escolares e artesanato. Customize a fonte e imprima em tamanho real.",
-          "applicationCategory": "UtilityApplication",
-          "operatingSystem": "All"
+          "@graph": [
+            {
+              "@type": "WebApplication",
+              "name": "Gerador de Moldes de Letras",
+              "url": "https://letradiferentes.org/moldes",
+              "description": "Gere moldes de letras grandes para painéis, cartazes, trabalhos escolares e artesanato. Customize a fonte e imprima em tamanho real.",
+              "applicationCategory": "UtilityApplication",
+              "operatingSystem": "All"
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://letradiferentes.org"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Moldes de Letras",
+                  "item": "https://letradiferentes.org/moldes"
+                }
+              ]
+            }
+          ]
         }
       },
       "ff-nicks": {
@@ -185,25 +354,67 @@ export default function App() {
         desc: "Crie nicks estilosos para Free Fire e outros jogos. Combine letras diferentes, símbolos especiais de asa, raio, cruz e espaços invisíveis.",
         schema: {
           "@context": "https://schema.org",
-          "@type": "WebApplication",
-          "name": "Gerador de Nicks Free Fire",
-          "url": "https://letradiferentes.org/#ff-nicks",
-          "description": "Crie nicks estilosos para Free Fire e outros jogos. Combine letras diferentes, símbolos especiais de asa, raio, cruz e espaços invisíveis.",
-          "applicationCategory": "UtilityApplication",
-          "operatingSystem": "All"
+          "@graph": [
+            {
+              "@type": "WebApplication",
+              "name": "Gerador de Nicks Free Fire",
+              "url": "https://letradiferentes.org/ff-nicks",
+              "description": "Crie nicks estilosos para Free Fire e outros jogos. Combine letras diferentes, símbolos especiais de asa, raio, cruz e espaços invisíveis.",
+              "applicationCategory": "UtilityApplication",
+              "operatingSystem": "All"
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://letradiferentes.org"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Nicks Free Fire",
+                  "item": "https://letradiferentes.org/ff-nicks"
+                }
+              ]
+            }
+          ]
         }
       },
       maiusculas: {
         title: "Letras Maiúsculas e Minúsculas - Conversor de Texto Online",
-        desc: "Converta seu texto para caixa alta, caixa baixa, alternada ou letras maiúsculas em segundos. Ideal para formatar títulos e parágrafos.",
+        desc: "Converta seu text para caixa alta, caixa baixa, alternada ou letras maiúsculas em segundos. Ideal para formatar títulos e parágrafos.",
         schema: {
           "@context": "https://schema.org",
-          "@type": "WebApplication",
-          "name": "Conversor de Letras Maiúsculas e Minúsculas",
-          "url": "https://letradiferentes.org/#maiusculas",
-          "description": "Converta seu texto para caixa alta, caixa baixa, alternada ou letras maiúsculas em segundos. Ideal para formatar títulos e parágrafos.",
-          "applicationCategory": "UtilityApplication",
-          "operatingSystem": "All"
+          "@graph": [
+            {
+              "@type": "WebApplication",
+              "name": "Conversor de Letras Maiúsculas e Minúsculas",
+              "url": "https://letradiferentes.org/maiusculas",
+              "description": "Converta seu text para caixa alta, caixa baixa, alternada ou letras maiúsculas em segundos. Ideal para formatar títulos e parágrafos.",
+              "applicationCategory": "UtilityApplication",
+              "operatingSystem": "All"
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://letradiferentes.org"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Conversor de Caixa Alta e Baixa",
+                  "item": "https://letradiferentes.org/maiusculas"
+                }
+              ]
+            }
+          ]
         }
       },
       libras: {
@@ -211,12 +422,33 @@ export default function App() {
         desc: "Aprenda e converta palavras para a Língua Brasileira de Sinais (Libras). Tabela visual completa do alfabeto de sinais para estudantes e educadores.",
         schema: {
           "@context": "https://schema.org",
-          "@type": "EducationalApplication",
-          "name": "Tradutor de Letras em Libras",
-          "url": "https://letradiferentes.org/#libras",
-          "description": "Aprenda e converta palavras para a Língua Brasileira de Sinais (Libras). Tabela visual completa do alfabeto de sinais para estudantes e educadores.",
-          "applicationCategory": "EducationalApplication",
-          "operatingSystem": "All"
+          "@graph": [
+            {
+              "@type": "EducationalApplication",
+              "name": "Tradutor de Letras em Libras",
+              "url": "https://letradiferentes.org/libras",
+              "description": "Aprenda e converta palavras para a Língua Brasileira de Sinais (Libras). Tabela visual completa do alfabeto de sinais para estudantes e educadores.",
+              "applicationCategory": "EducationalApplication",
+              "operatingSystem": "All"
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://letradiferentes.org"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Letras em Libras",
+                  "item": "https://letradiferentes.org/libras"
+                }
+              ]
+            }
+          ]
         }
       },
       "termo-helper": {
@@ -224,12 +456,33 @@ export default function App() {
         desc: "Descubra as palavras possíveis para o jogo Termo, Contexto e Wordle. Filtre por letras certas, erradas e posições para vencer todas as rodadas.",
         schema: {
           "@context": "https://schema.org",
-          "@type": "WebApplication",
-          "name": "Termo Helper",
-          "url": "https://letradiferentes.org/#termo-helper",
-          "description": "Descubra as palavras possíveis para o jogo Termo, Contexto e Wordle. Filtre por letras certas, erradas e posições para vencer todas as rodadas.",
-          "applicationCategory": "GameApplication",
-          "operatingSystem": "All"
+          "@graph": [
+            {
+              "@type": "WebApplication",
+              "name": "Termo Helper",
+              "url": "https://letradiferentes.org/termo-helper",
+              "description": "Descubra as palavras possíveis para o jogo Termo, Contexto e Wordle. Filtre por letras certas, erradas e posições para vencer todas as rodadas.",
+              "applicationCategory": "GameApplication",
+              "operatingSystem": "All"
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://letradiferentes.org"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Termo Helper",
+                  "item": "https://letradiferentes.org/termo-helper"
+                }
+              ]
+            }
+          ]
         }
       },
       "stop-respostas": {
@@ -237,12 +490,33 @@ export default function App() {
         desc: "Consulte respostas válidas para todas as categorias do jogo do Stop ou Adedanha de A a Z. Melhore seu repertório e ganhe pontos extras.",
         schema: {
           "@context": "https://schema.org",
-          "@type": "WebApplication",
-          "name": "Dicionário de Respostas de Stop e Adedanha",
-          "url": "https://letradiferentes.org/#stop-respostas",
-          "description": "Consulte respostas válidas para todas as categorias do jogo do Stop ou Adedanha de A a Z. Melhore seu repertório e ganhe pontos extras.",
-          "applicationCategory": "UtilityApplication",
-          "operatingSystem": "All"
+          "@graph": [
+            {
+              "@type": "WebApplication",
+              "name": "Dicionário de Respostas de Stop e Adedanha",
+              "url": "https://letradiferentes.org/stop-respostas",
+              "description": "Consulte respostas válidas para todas as categorias do jogo do Stop ou Adedanha de A a Z. Melhore seu repertório e ganhe pontos extras.",
+              "applicationCategory": "UtilityApplication",
+              "operatingSystem": "All"
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://letradiferentes.org"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Respostas do Stop",
+                  "item": "https://letradiferentes.org/stop-respostas"
+                }
+              ]
+            }
+          ]
         }
       },
       sobre: {
@@ -252,7 +526,7 @@ export default function App() {
           "@context": "https://schema.org",
           "@type": "AboutPage",
           "name": "Sobre Nós - LetraDiferentes",
-          "url": "https://letradiferentes.org/#sobre"
+          "url": "https://letradiferentes.org/sobre"
         }
       },
       contato: {
@@ -262,7 +536,7 @@ export default function App() {
           "@context": "https://schema.org",
           "@type": "ContactPage",
           "name": "Fale Conosco - LetraDiferentes",
-          "url": "https://letradiferentes.org/#contato"
+          "url": "https://letradiferentes.org/contato"
         }
       },
       privacidade: {
@@ -272,7 +546,7 @@ export default function App() {
           "@context": "https://schema.org",
           "@type": "WebPage",
           "name": "Política de Privacidade - LetraDiferentes",
-          "url": "https://letradiferentes.org/#privacidade"
+          "url": "https://letradiferentes.org/privacidade"
         }
       },
       termos: {
@@ -282,7 +556,7 @@ export default function App() {
           "@context": "https://schema.org",
           "@type": "WebPage",
           "name": "Termos de Serviço - LetraDiferentes",
-          "url": "https://letradiferentes.org/#termos"
+          "url": "https://letradiferentes.org/termos"
         }
       }
     };
@@ -301,6 +575,31 @@ export default function App() {
     }
     metaDesc.setAttribute("content", currentSeo.desc);
 
+    // 2b. Update meta keywords dynamically
+    const keywordsMap: Record<TabId, string> = {
+      home: "letras diferentes, gerador de fontes, letras bonitas, copiar e colar fontes, fontes para instagram, nicks free fire, letras personalizadas",
+      tatuagem: "letras para tatuagem, fontes de tatuagem, caligrafia para tatuagem, ideias de tatuagem escrita, simulador de tatuagem",
+      grafite: "letras de grafite, alfabeto de grafite, gerador de grafite, letras estilosas de rua, grafite online",
+      pequenas: "letras pequenas, letras miudas, letra pequena nick, sobrescrito e subscrito, gerador de letra pequena",
+      moldes: "moldes de letras, molde de letra para imprimir, letras grandes para recortar, moldes eva, moldes de alfabeto",
+      "ff-nicks": "nicks free fire, simbolos ff, nomes para free fire, espaco invisivel ff, gerador de nick, nicks masculinos ff",
+      maiusculas: "letras maiusculas, caixa alta e baixa, conversor de texto, inverter maiusculas e minusculas, formatar texto",
+      libras: "letras em libras, alfabeto em libras, lingua brasileira de sinais, tradutor libras, sinais de libras",
+      "termo-helper": "termo helper, solucionador termo, dicas jogo termo, resposta termo, wordle helper, decifrar termo",
+      "stop-respostas": "respostas stop, respostas adedanha, jogo de stop, palavras de a a z, dicionario stop, adedanha respostas",
+      sobre: "sobre letradiferentes, quem somos, missao valores, equipe letradiferentes",
+      contato: "contato letradiferentes, falar conosco, suporte, sugestoes de fontes",
+      privacidade: "politica de privacidade, termos lgpd, seguranca de dados, cookies",
+      termos: "termos de servico, termos de uso, condicoes gerais, licenca gratuita"
+    };
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement("meta");
+      metaKeywords.setAttribute("name", "keywords");
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute("content", keywordsMap[activeTab] || keywordsMap.home);
+
     // 3. Update JSON-LD structured data script
     let scriptTag = document.getElementById("seo-jsonld") as HTMLScriptElement;
     if (!scriptTag) {
@@ -318,8 +617,27 @@ export default function App() {
       canonicalLink.setAttribute("rel", "canonical");
       document.head.appendChild(canonicalLink);
     }
-    const currentUrl = `https://letradiferentes.org/${activeTab === "home" ? "" : "#" + activeTab}`;
+    const currentUrl = `https://letradiferentes.org/${activeTab === "home" ? "" : activeTab}`;
     canonicalLink.setAttribute("href", currentUrl);
+
+    // 4b. Update hreflang Link Tags dynamically
+    let hreflangPt = document.querySelector('link[rel="alternate"][hreflang="pt"]');
+    if (!hreflangPt) {
+      hreflangPt = document.createElement("link");
+      hreflangPt.setAttribute("rel", "alternate");
+      hreflangPt.setAttribute("hreflang", "pt");
+      document.head.appendChild(hreflangPt);
+    }
+    hreflangPt.setAttribute("href", currentUrl);
+
+    let hreflangDefault = document.querySelector('link[rel="alternate"][hreflang="x-default"]');
+    if (!hreflangDefault) {
+      hreflangDefault = document.createElement("link");
+      hreflangDefault.setAttribute("rel", "alternate");
+      hreflangDefault.setAttribute("hreflang", "x-default");
+      document.head.appendChild(hreflangDefault);
+    }
+    hreflangDefault.setAttribute("href", currentUrl);
 
     // 5. Update Open Graph and Twitter Card tags
     const ogTags: Record<string, string> = {
@@ -348,12 +666,15 @@ export default function App() {
     });
   }, [activeTab]);
 
-  // Update hash when tab state changes
+  // Update clean path and state when tab changes
   const handleTabChange = (tabId: TabId) => {
     setActiveTab(tabId);
-    window.location.hash = tabId === "home" ? "" : tabId;
+    const newPath = tabId === "home" ? "/" : `/${tabId}`;
+    window.history.pushState({ tabId }, "", newPath);
     setDropdownOpen(false);
     setSearchTerm("");
+    // Scroll smoothly to top for better UX
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   // Trigger floating notifications
@@ -462,9 +783,15 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Brand Logo & Name (letradiferentes.org) */}
-            <div 
+            <a 
+              href="/"
+              title="Letras Diferentes - Gerador de Fontes e Letras Bonitas"
+              aria-label="Página Inicial - Letras Diferentes"
               className="flex items-center gap-3.5 cursor-pointer select-none group"
-              onClick={() => handleTabChange("home")}
+              onClick={(e) => {
+                e.preventDefault();
+                handleTabChange("home");
+              }}
             >
               <div className="relative">
                 <div className="w-11 h-11 bg-gradient-to-tr from-indigo-600 via-violet-600 to-pink-600 rounded-xl flex items-center justify-center text-white font-extrabold shadow-lg shadow-indigo-500/15 group-hover:scale-[1.05] group-hover:rotate-1 transition-all duration-300 ring-2 ring-indigo-50">
@@ -489,7 +816,7 @@ export default function App() {
                   letradiferentes.org
                 </span>
               </div>
-            </div>
+            </a>
 
             {/* Header Menu dropdown & Actions */}
             <div className="flex items-center gap-3">
@@ -553,9 +880,11 @@ export default function App() {
                         filteredTabs.map((tab) => {
                           const isActive = activeTab === tab.id;
                           return (
-                            <button
+                            <a
                               key={tab.id}
-                              onClick={() => {
+                              href={tab.id === "home" ? "/" : `/${tab.id}`}
+                              onClick={(e) => {
+                                e.preventDefault();
                                 handleTabChange(tab.id);
                               }}
                               className={`w-full flex items-center justify-between p-2.5 rounded-xl text-left transition-all cursor-pointer ${
@@ -576,7 +905,7 @@ export default function App() {
                               {isActive && (
                                 <div className="w-2 h-2 bg-[#4F46E5] rounded-full mr-2" />
                               )}
-                            </button>
+                            </a>
                           );
                         })
                       ) : (
@@ -599,9 +928,13 @@ export default function App() {
               {tabs.map((tab) => {
                 const isActive = activeTab === tab.id;
                 return (
-                  <button
+                  <a
                     key={tab.id}
-                    onClick={() => handleTabChange(tab.id)}
+                    href={tab.id === "home" ? "/" : `/${tab.id}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleTabChange(tab.id);
+                    }}
                     className={`flex items-center gap-2.5 px-4 py-2 rounded-full text-xs font-bold tracking-wide whitespace-nowrap transition-all duration-300 cursor-pointer shrink-0 border ${
                       isActive
                         ? "bg-[#4F46E5] text-white border-[#4F46E5] shadow-sm shadow-indigo-500/10"
@@ -612,7 +945,7 @@ export default function App() {
                       {tab.icon}
                     </span>
                     <span>{tab.label}</span>
-                  </button>
+                  </a>
                 );
               })}
             </div>
@@ -694,15 +1027,15 @@ export default function App() {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
             <p>© {new Date().getFullYear()} LetraDiferentes (letradiferentes.org) • Ferramentas de Estilo 100% Modulares &amp; Seguras.</p>
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-slate-400">
-              <span className="hover:text-indigo-600 transition-colors cursor-pointer" onClick={() => handleTabChange("home")}>Início</span>
+              <a href="/" className="hover:text-indigo-600 transition-colors cursor-pointer" onClick={(e) => { e.preventDefault(); handleTabChange("home"); }}>Início</a>
               <span className="text-slate-200">•</span>
-              <span className="hover:text-indigo-600 transition-colors cursor-pointer" onClick={() => handleTabChange("sobre")}>Sobre Nós</span>
+              <a href="/sobre" className="hover:text-indigo-600 transition-colors cursor-pointer" onClick={(e) => { e.preventDefault(); handleTabChange("sobre"); }}>Sobre Nós</a>
               <span className="text-slate-200">•</span>
-              <span className="hover:text-indigo-600 transition-colors cursor-pointer" onClick={() => handleTabChange("contato")}>Contato</span>
+              <a href="/contato" className="hover:text-indigo-600 transition-colors cursor-pointer" onClick={(e) => { e.preventDefault(); handleTabChange("contato"); }}>Contato</a>
               <span className="text-slate-200">•</span>
-              <span className="hover:text-indigo-600 transition-colors cursor-pointer" onClick={() => handleTabChange("privacidade")}>Política de Privacidade</span>
+              <a href="/privacidade" className="hover:text-indigo-600 transition-colors cursor-pointer" onClick={(e) => { e.preventDefault(); handleTabChange("privacidade"); }}>Política de Privacidade</a>
               <span className="text-slate-200">•</span>
-              <span className="hover:text-indigo-600 transition-colors cursor-pointer" onClick={() => handleTabChange("termos")}>Termos de Serviço</span>
+              <a href="/termos" className="hover:text-indigo-600 transition-colors cursor-pointer" onClick={(e) => { e.preventDefault(); handleTabChange("termos"); }}>Termos de Serviço</a>
             </div>
           </div>
         </div>

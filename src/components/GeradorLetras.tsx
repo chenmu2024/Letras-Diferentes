@@ -759,9 +759,13 @@ export default function GeradorLetras({ onNotify, onNavigate }: GeradorLetrasPro
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {toolDirectory.map((tool) => (
-            <button
+            <a
               key={tool.id}
-              onClick={() => onNavigate && onNavigate(tool.id)}
+              href={tool.id === "home" ? "/" : `/${tool.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate && onNavigate(tool.id);
+              }}
               className="group text-left p-5 bg-white border border-slate-200/70 hover:border-[#4F46E5] rounded-3xl hover:shadow-[0_12px_24px_rgba(79,70,229,0.03)] transition-all duration-300 flex items-start gap-4 cursor-pointer focus:outline-none focus:ring-4 focus:ring-indigo-500/5"
             >
               <span className="text-2xl p-3 bg-slate-50 group-hover:bg-indigo-50/60 rounded-2xl transition-all duration-300 shrink-0 select-none">
@@ -779,7 +783,7 @@ export default function GeradorLetras({ onNotify, onNavigate }: GeradorLetrasPro
                   <span>→</span>
                 </div>
               </div>
-            </button>
+            </a>
           ))}
         </div>
       </div>

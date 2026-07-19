@@ -10,7 +10,7 @@
 
   <!-- Letras para Tatuagem -->
   <url>
-    <loc>https://letradiferentes.org/#tatuagem</loc>
+    <loc>https://letradiferentes.org/tatuagem</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -18,7 +18,7 @@
 
   <!-- Letras de Grafite -->
   <url>
-    <loc>https://letradiferentes.org/#grafite</loc>
+    <loc>https://letradiferentes.org/grafite</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -26,7 +26,7 @@
 
   <!-- Letras Pequenas -->
   <url>
-    <loc>https://letradiferentes.org/#pequenas</loc>
+    <loc>https://letradiferentes.org/pequenas</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -34,7 +34,7 @@
 
   <!-- Moldes de Letras -->
   <url>
-    <loc>https://letradiferentes.org/#moldes</loc>
+    <loc>https://letradiferentes.org/moldes</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -42,7 +42,7 @@
 
   <!-- Nicks Free Fire e Símbolos -->
   <url>
-    <loc>https://letradiferentes.org/#ff-nicks</loc>
+    <loc>https://letradiferentes.org/ff-nicks</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
@@ -50,7 +50,7 @@
 
   <!-- Letras Maiúsculas e Minúsculas -->
   <url>
-    <loc>https://letradiferentes.org/#maiusculas</loc>
+    <loc>https://letradiferentes.org/maiusculas</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -58,7 +58,7 @@
 
   <!-- Letras em Libras -->
   <url>
-    <loc>https://letradiferentes.org/#libras</loc>
+    <loc>https://letradiferentes.org/libras</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -66,7 +66,7 @@
 
   <!-- Termo Helper -->
   <url>
-    <loc>https://letradiferentes.org/#termo-helper</loc>
+    <loc>https://letradiferentes.org/termo-helper</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -74,7 +74,7 @@
 
   <!-- Respostas do Stop / Adedanha -->
   <url>
-    <loc>https://letradiferentes.org/#stop-respostas</loc>
+    <loc>https://letradiferentes.org/stop-respostas</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -82,7 +82,7 @@
 
   <!-- Institucional: Sobre Nós -->
   <url>
-    <loc>https://letradiferentes.org/#sobre</loc>
+    <loc>https://letradiferentes.org/sobre</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -90,7 +90,7 @@
 
   <!-- Institucional: Contato -->
   <url>
-    <loc>https://letradiferentes.org/#contato</loc>
+    <loc>https://letradiferentes.org/contato</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -98,7 +98,7 @@
 
   <!-- Institucional: Política de Privacidade -->
   <url>
-    <loc>https://letradiferentes.org/#privacidade</loc>
+    <loc>https://letradiferentes.org/privacidade</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -106,7 +106,7 @@
 
   <!-- Institucional: Termos de Serviço -->
   <url>
-    <loc>https://letradiferentes.org/#termos</loc>
+    <loc>https://letradiferentes.org/termos</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
