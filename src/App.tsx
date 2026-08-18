@@ -563,107 +563,113 @@ export default function App() {
 
     const currentSeo = seoConfig[activeTab] || seoConfig.home;
 
-    // 1. Update document title
-    document.title = currentSeo.title;
-
-    // 2. Update meta description dynamically
-    let metaDesc = document.querySelector('meta[name="description"]');
-    if (!metaDesc) {
-      metaDesc = document.createElement("meta");
-      metaDesc.setAttribute("name", "description");
-      document.head.appendChild(metaDesc);
-    }
-    metaDesc.setAttribute("content", currentSeo.desc);
-
-    // 2b. Update meta keywords dynamically
-    const keywordsMap: Record<TabId, string> = {
-      home: "letras diferentes, gerador de fontes, letras bonitas, copiar e colar fontes, fontes para instagram, nicks free fire, letras personalizadas",
-      tatuagem: "letras para tatuagem, fontes de tatuagem, caligrafia para tatuagem, ideias de tatuagem escrita, simulador de tatuagem",
-      grafite: "letras de grafite, alfabeto de grafite, gerador de grafite, letras estilosas de rua, grafite online",
-      pequenas: "letras pequenas, letras miudas, letra pequena nick, sobrescrito e subscrito, gerador de letra pequena",
-      moldes: "moldes de letras, molde de letra para imprimir, letras grandes para recortar, moldes eva, moldes de alfabeto",
-      "ff-nicks": "nicks free fire, simbolos ff, nomes para free fire, espaco invisivel ff, gerador de nick, nicks masculinos ff",
-      maiusculas: "letras maiusculas, caixa alta e baixa, conversor de texto, inverter maiusculas e minusculas, formatar texto",
-      libras: "letras em libras, alfabeto em libras, lingua brasileira de sinais, tradutor libras, sinais de libras",
-      "termo-helper": "termo helper, solucionador termo, dicas jogo termo, resposta termo, wordle helper, decifrar termo",
-      "stop-respostas": "respostas stop, respostas adedanha, jogo de stop, palavras de a a z, dicionario stop, adedanha respostas",
-      sobre: "sobre letradiferentes, quem somos, missao valores, equipe letradiferentes",
-      contato: "contato letradiferentes, falar conosco, suporte, sugestoes de fontes",
-      privacidade: "politica de privacidade, termos lgpd, seguranca de dados, cookies",
-      termos: "termos de servico, termos de uso, condicoes gerais, licenca gratuita"
-    };
-    let metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (!metaKeywords) {
-      metaKeywords = document.createElement("meta");
-      metaKeywords.setAttribute("name", "keywords");
-      document.head.appendChild(metaKeywords);
-    }
-    metaKeywords.setAttribute("content", keywordsMap[activeTab] || keywordsMap.home);
-
-    // 3. Update JSON-LD structured data script
-    let scriptTag = document.getElementById("seo-jsonld") as HTMLScriptElement;
-    if (!scriptTag) {
-      scriptTag = document.createElement("script");
-      scriptTag.id = "seo-jsonld";
-      scriptTag.type = "application/ld+json";
-      document.head.appendChild(scriptTag);
-    }
-    scriptTag.textContent = JSON.stringify(currentSeo.schema);
-
-    // 4. Update Canonical Link
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (!canonicalLink) {
-      canonicalLink = document.createElement("link");
-      canonicalLink.setAttribute("rel", "canonical");
-      document.head.appendChild(canonicalLink);
-    }
-    const currentUrl = `https://letradiferentes.org/${activeTab === "home" ? "" : activeTab}`;
-    canonicalLink.setAttribute("href", currentUrl);
-
-    // 4b. Update hreflang Link Tags dynamically
-    let hreflangPt = document.querySelector('link[rel="alternate"][hreflang="pt"]');
-    if (!hreflangPt) {
-      hreflangPt = document.createElement("link");
-      hreflangPt.setAttribute("rel", "alternate");
-      hreflangPt.setAttribute("hreflang", "pt");
-      document.head.appendChild(hreflangPt);
-    }
-    hreflangPt.setAttribute("href", currentUrl);
-
-    let hreflangDefault = document.querySelector('link[rel="alternate"][hreflang="x-default"]');
-    if (!hreflangDefault) {
-      hreflangDefault = document.createElement("link");
-      hreflangDefault.setAttribute("rel", "alternate");
-      hreflangDefault.setAttribute("hreflang", "x-default");
-      document.head.appendChild(hreflangDefault);
-    }
-    hreflangDefault.setAttribute("href", currentUrl);
-
-    // 5. Update Open Graph and Twitter Card tags
-    const ogTags: Record<string, string> = {
-      "og:title": currentSeo.title,
-      "og:description": currentSeo.desc,
-      "og:url": currentUrl,
-      "twitter:title": currentSeo.title,
-      "twitter:description": currentSeo.desc,
-      "twitter:url": currentUrl,
-    };
-
-    Object.entries(ogTags).forEach(([property, content]) => {
-      const isTwitter = property.startsWith("twitter:");
-      const selector = isTwitter ? `meta[name="${property}"]` : `meta[property="${property}"]`;
-      let el = document.querySelector(selector);
-      if (!el) {
-        el = document.createElement("meta");
-        if (isTwitter) {
-          el.setAttribute("name", property);
-        } else {
-          el.setAttribute("property", property);
-        }
-        document.head.appendChild(el);
+    const rafId = requestAnimationFrame(() => {
+      // 1. Update document title
+      if (document.title !== currentSeo.title) {
+        document.title = currentSeo.title;
       }
-      el.setAttribute("content", content);
+
+      // 2. Update meta description dynamically
+      let metaDesc = document.querySelector('meta[name="description"]');
+      if (!metaDesc) {
+        metaDesc = document.createElement("meta");
+        metaDesc.setAttribute("name", "description");
+        document.head.appendChild(metaDesc);
+      }
+      metaDesc.setAttribute("content", currentSeo.desc);
+
+      // 2b. Update meta keywords dynamically
+      const keywordsMap: Record<TabId, string> = {
+        home: "letras diferentes, gerador de fontes, letras bonitas, copiar e colar fontes, fontes para instagram, nicks free fire, letras personalizadas",
+        tatuagem: "letras para tatuagem, fontes de tatuagem, caligrafia para tatuagem, ideias de tatuagem escrita, simulador de tatuagem",
+        grafite: "letras de grafite, alfabeto de grafite, gerador de grafite, letras estilosas de rua, grafite online",
+        pequenas: "letras pequenas, letras miudas, letra pequena nick, sobrescrito e subscrito, gerador de letra pequena",
+        moldes: "moldes de letras, molde de letra para imprimir, letras grandes para recortar, moldes eva, moldes de alfabeto",
+        "ff-nicks": "nicks free fire, simbolos ff, nomes para free fire, espaco invisivel ff, gerador de nick, nicks masculinos ff",
+        maiusculas: "letras maiusculas, caixa alta e baixa, conversor de texto, inverter maiusculas e minusculas, formatar texto",
+        libras: "letras em libras, alfabeto em libras, lingua brasileira de sinais, tradutor libras, sinais de libras",
+        "termo-helper": "termo helper, solucionador termo, dicas jogo termo, resposta termo, wordle helper, decifrar termo",
+        "stop-respostas": "respostas stop, respostas adedanha, jogo de stop, palavras de a a z, dicionario stop, adedanha respostas",
+        sobre: "sobre letradiferentes, quem somos, missao valores, equipe letradiferentes",
+        contato: "contato letradiferentes, falar conosco, suporte, sugestoes de fontes",
+        privacidade: "politica de privacidade, termos lgpd, seguranca de dados, cookies",
+        termos: "termos de servico, termos de uso, condicoes gerais, licenca gratuita"
+      };
+      let metaKeywords = document.querySelector('meta[name="keywords"]');
+      if (!metaKeywords) {
+        metaKeywords = document.createElement("meta");
+        metaKeywords.setAttribute("name", "keywords");
+        document.head.appendChild(metaKeywords);
+      }
+      metaKeywords.setAttribute("content", keywordsMap[activeTab] || keywordsMap.home);
+
+      // 3. Update JSON-LD structured data script
+      let scriptTag = document.getElementById("seo-jsonld") as HTMLScriptElement;
+      if (!scriptTag) {
+        scriptTag = document.createElement("script");
+        scriptTag.id = "seo-jsonld";
+        scriptTag.type = "application/ld+json";
+        document.head.appendChild(scriptTag);
+      }
+      scriptTag.textContent = JSON.stringify(currentSeo.schema);
+
+      // 4. Update Canonical Link
+      let canonicalLink = document.querySelector('link[rel="canonical"]');
+      if (!canonicalLink) {
+        canonicalLink = document.createElement("link");
+        canonicalLink.setAttribute("rel", "canonical");
+        document.head.appendChild(canonicalLink);
+      }
+      const currentUrl = `https://letradiferentes.org/${activeTab === "home" ? "" : activeTab}`;
+      canonicalLink.setAttribute("href", currentUrl);
+
+      // 4b. Update hreflang Link Tags dynamically
+      let hreflangPt = document.querySelector('link[rel="alternate"][hreflang="pt"]');
+      if (!hreflangPt) {
+        hreflangPt = document.createElement("link");
+        hreflangPt.setAttribute("rel", "alternate");
+        hreflangPt.setAttribute("hreflang", "pt");
+        document.head.appendChild(hreflangPt);
+      }
+      hreflangPt.setAttribute("href", currentUrl);
+
+      let hreflangDefault = document.querySelector('link[rel="alternate"][hreflang="x-default"]');
+      if (!hreflangDefault) {
+        hreflangDefault = document.createElement("link");
+        hreflangDefault.setAttribute("rel", "alternate");
+        hreflangDefault.setAttribute("hreflang", "x-default");
+        document.head.appendChild(hreflangDefault);
+      }
+      hreflangDefault.setAttribute("href", currentUrl);
+
+      // 5. Update Open Graph and Twitter Card tags
+      const ogTags: Record<string, string> = {
+        "og:title": currentSeo.title,
+        "og:description": currentSeo.desc,
+        "og:url": currentUrl,
+        "twitter:title": currentSeo.title,
+        "twitter:description": currentSeo.desc,
+        "twitter:url": currentUrl,
+      };
+
+      Object.entries(ogTags).forEach(([property, content]) => {
+        const isTwitter = property.startsWith("twitter:");
+        const selector = isTwitter ? `meta[name="${property}"]` : `meta[property="${property}"]`;
+        let el = document.querySelector(selector);
+        if (!el) {
+          el = document.createElement("meta");
+          if (isTwitter) {
+            el.setAttribute("name", property);
+          } else {
+            el.setAttribute("property", property);
+          }
+          document.head.appendChild(el);
+        }
+        el.setAttribute("content", content);
+      });
     });
+
+    return () => cancelAnimationFrame(rafId);
   }, [activeTab]);
 
   // Update clean path and state when tab changes

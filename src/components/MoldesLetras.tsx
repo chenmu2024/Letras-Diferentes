@@ -16,6 +16,22 @@ import {
   Heart
 } from "lucide-react";
 
+// Inject moldes-specific Google Fonts dynamically
+if (typeof document !== "undefined") {
+  const linkId = "moldes-google-fonts";
+  if (!document.getElementById(linkId)) {
+    const link = document.createElement("link");
+    link.id = linkId;
+    link.rel = "stylesheet";
+    link.href = "https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700;900&family=Great+Vibes&display=swap";
+    link.media = "print";
+    link.onload = function() {
+      (this as any).media = "all";
+    };
+    document.head.appendChild(link);
+  }
+}
+
 interface MoldesLetrasProps {
   onNotify: (message: string) => void;
 }

@@ -23,6 +23,22 @@ import {
   Type
 } from "lucide-react";
 
+// Inject graffiti-specific Google Fonts dynamically when component is used
+if (typeof document !== "undefined") {
+  const linkId = "grafite-google-fonts";
+  if (!document.getElementById(linkId)) {
+    const link = document.createElement("link");
+    link.id = linkId;
+    link.rel = "stylesheet";
+    link.href = "https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Sedgwick+Ave+Display&family=Sedgwick+Ave&family=Bangers&family=Rubik+Dirt&family=Creepster&family=Wallpoet&family=Frijole&display=swap";
+    link.media = "print";
+    link.onload = function() {
+      (this as any).media = "all";
+    };
+    document.head.appendChild(link);
+  }
+}
+
 interface LetrasGrafiteProps {
   onNotify: (message: string) => void;
 }
