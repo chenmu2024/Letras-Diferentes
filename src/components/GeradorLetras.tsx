@@ -789,7 +789,7 @@ export default function GeradorLetras({ onNotify, onNavigate }: GeradorLetrasPro
       </div>
 
       {/* SEO & Informational content guide */}
-      <SeoContent />
+      <SeoContent onNavigate={onNavigate} />
 
       {/* FAQ Collapse Accordion Section */}
       <div className="space-y-6 pt-10 border-t border-slate-200/80">

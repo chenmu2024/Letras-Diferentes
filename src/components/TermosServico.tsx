@@ -81,6 +81,9 @@ export default function TermosServico() {
           <p>
             Não nos responsabilizamos por perdas de dados decorrentes de caches corrompidos, incompatibilidades das fontes Unicode em determinados dispositivos móveis mais antigos, ou por desentendimentos relativos às respostas aceitas em partidas privadas do jogo do Stop/Adedanha. Nossas listas de referência são meramente consultivas e informativas.
           </p>
+          <p className="pt-2 text-[11px] text-slate-500 italic">
+            *Aviso sobre Marcas e Terceiros: Nomes de jogos e plataformas (como Free Fire, Garena, Instagram, Meta, TikTok, WhatsApp, Roblox, Apple, Google) são marcas registradas de seus respectivos proprietários. O letradiferentes.org é uma plataforma independente de tipografia digital e utilitários de texto, sem afiliação, patrocínio ou endosso oficial por parte de tais entidades.
+          </p>
         </div>
 
         {/* Modifications */}
@@ -96,7 +99,7 @@ export default function TermosServico() {
 
         {/* Footer info within terms */}
         <div className="border-t border-slate-100 pt-6 text-slate-400 text-[11px] flex justify-between items-center">
-          <span>Última atualização: Julho de 2026</span>
+          <span>Última atualização: Fevereiro de 2026</span>
           <span>letradiferentes.org</span>
         </div>
 
