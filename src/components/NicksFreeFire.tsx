@@ -191,9 +191,9 @@ export default function NicksFreeFire({ onNotify }: NicksFreeFireProps) {
           <Flame className="w-3.5 h-3.5 text-orange-500 animate-pulse" />
           <span>Esports Nick Workshop, Símbolos de Free Fire &amp; letras diferentes ff</span>
         </div>
-        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-[#0F172A] tracking-tight leading-tight">
+        <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-[#0F172A] tracking-tight leading-tight">
           Nicks de <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-red-500 to-indigo-600">Free Fire</span>, Símbolos Pro &amp; Letras Diferentes FF
-        </h2>
+        </h1>
         <p className="text-xs md:text-sm text-slate-500 max-w-2xl leading-relaxed font-semibold">
           Gere nicks de Free Fire apelões com <span className="text-orange-600">letras diferentes ff</span> de alta qualidade. Copie símbolos especiais, verificado Ⓥ, raios, asas e o famoso espaço invisível com <span className="text-orange-600">letras diferentes ff</span> para se destacar no lobby. Use nossa oficina inteligente de <span className="text-orange-600">letras diferentes ff</span> para montar e testar o tamanho oficial do seu apelido!
         </p>
