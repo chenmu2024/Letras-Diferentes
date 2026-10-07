@@ -282,9 +282,9 @@ export default function LetrasPequenas({ onNotify }: LetrasPequenasProps) {
           <Sparkles className="w-3.5 h-3.5 text-indigo-500 animate-pulse" />
           <span>Micro-Formatos de Letras Unicode</span>
         </div>
-        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-[#0F172A] tracking-tight leading-tight">
+        <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-[#0F172A] tracking-tight leading-tight">
           Letras <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-pink-500 to-violet-600">Pequenas</span> para Nick
-        </h2>
+        </h1>
         <p className="text-xs md:text-sm text-slate-500 max-w-3xl leading-relaxed font-semibold">
           Use o melhor gerador de <strong>letras pequenas</strong> para criar seu nick personalizado! Se você precisa de uma <strong>letra pequena</strong> bonita para Free Fire, Roblox ou Fortnite, nosso site gera <strong>letras pequenas</strong> sobrescritas e subscritas em segundos. Descubra como cada <strong>letra pequena</strong> pode transformar o seu visual nas redes sociais e jogos com nossas ferramentas exclusivas de <strong>letras pequenas</strong> para copiar.
         </p>
