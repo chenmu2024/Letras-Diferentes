@@ -156,8 +156,11 @@ export default function LetrasLibras({ onNotify }: LetrasLibrasProps) {
           Alfabeto em <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-pink-500 to-violet-600">Libras</span> Interativo
         </h1>
         <p className="text-xs md:text-sm text-slate-500 max-w-2xl leading-relaxed font-medium">
-          Aprenda a Língua Brasileira de Sinais (Libras). Explore as 26 letras do alfabeto datilológico (soletrado), controle velocidades de soletração, desafie-se com o quiz interativo e use cartões didáticos flipáveis.
+          Explore de forma introdutória as 26 letras do alfabeto manual usado na Libras, pratique sequências de soletração e use o quiz e os cartões ilustrativos como apoio de memorização.
         </p>
+        <div className="max-w-2xl rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-[11px] md:text-xs leading-relaxed text-amber-900">
+          <strong>Nota de precisão:</strong> as mãos exibidas nesta ferramenta são ilustrações vetoriais simplificadas para apoio visual. Elas não substituem material didático validado, aulas de Libras ou orientação de profissionais e da comunidade surda.
+        </div>
       </div>
 
       {/* Speller Simulator (Text-to-Libras) */}
@@ -169,7 +172,7 @@ export default function LetrasLibras({ onNotify }: LetrasLibrasProps) {
             Soletrador Automático (Tradutor para Sinais)
           </h3>
           <p className="text-xs text-slate-500 mt-1 font-medium leading-relaxed">
-            Digite um nome ou palavra abaixo para ver a representação sequencial em Libras de forma animada:
+            Digite um nome ou palavra para visualizar uma sequência ilustrativa das letras do alfabeto manual:
           </p>
         </div>
 
@@ -437,7 +440,7 @@ export default function LetrasLibras({ onNotify }: LetrasLibrasProps) {
           <div>
             <h3 className="font-display text-base font-black text-[#0F172A] flex items-center gap-2">
               <span className="p-1 bg-indigo-50 text-[#4F46E5] rounded-lg">📚</span>
-              Glossário &amp; Cartões Didáticos de Libras
+              Cartões Ilustrativos do Alfabeto Manual
             </h3>
             <p className="text-xs text-slate-500 mt-1 font-medium leading-relaxed">
               Alterne o modo de estudo abaixo para explorar o glossário convencional ou testar sua memória com cartões didáticos flipáveis!
@@ -516,7 +519,7 @@ export default function LetrasLibras({ onNotify }: LetrasLibrasProps) {
               
               <div className="md:col-span-3 space-y-3">
                 <h4 className="font-display text-base font-black text-[#0F172A] tracking-tight">
-                  Instrução Corporal: Como sinalizar a Letra &quot;{selectedLetter}&quot; em Libras
+                  Descrição introdutória da Letra &quot;{selectedLetter}&quot;
                 </h4>
                 <p className="text-xs md:text-sm text-slate-500 leading-relaxed font-medium">
                   {LIBRAS_DICTIONARY[selectedLetter]?.description || "Feche a mão e mantenha o polegar estendido lateralmente."}
@@ -526,7 +529,7 @@ export default function LetrasLibras({ onNotify }: LetrasLibrasProps) {
                     Orientação: {LIBRAS_DICTIONARY[selectedLetter]?.direction || "Estática"}
                   </span>
                   <span className="bg-white border border-slate-200/60 px-3 py-1 rounded-xl shadow-xs">
-                    Classe: Alfabeto Datilológico
+                    Classe: Alfabeto Manual • Ilustração Simplificada
                   </span>
                 </div>
               </div>
@@ -595,7 +598,7 @@ export default function LetrasLibras({ onNotify }: LetrasLibrasProps) {
       {/* NOVO: Guia de Estudo e Otimização de Densidade (SEO Educativo) */}
       <div className="bg-white rounded-3xl border border-slate-200/80 p-6 md:p-8 space-y-6 shadow-[0_8px_30px_rgb(0,0,0,0.01)]">
         <h3 className="font-display text-lg font-black text-[#0F172A] border-b border-slate-200 pb-3 flex items-center gap-2">
-          <span>📚</span> Guia de Estudos: Dominando o Alfabeto em Libras e as Letras em Libras
+          <span>📚</span> Guia Introdutório: Alfabeto Manual e Datilologia em Libras
         </h3>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs md:text-sm text-slate-600 leading-relaxed font-medium">
@@ -644,10 +647,10 @@ export default function LetrasLibras({ onNotify }: LetrasLibrasProps) {
       <div className="bg-white rounded-3xl border border-slate-200/80 p-6 md:p-8 space-y-6 shadow-[0_8px_30px_rgb(0,0,0,0.01)]">
         <div>
           <h3 className="font-display text-base font-black text-[#0F172A] flex items-center gap-2 border-b border-slate-100 pb-3">
-            <span>🤟</span> Dicionário Detalhado: Alfabeto em Libras Completo
+            <span>🤟</span> Guia Ilustrado: Alfabeto Manual de A a Z
           </h3>
           <p className="text-xs text-slate-500 mt-1 font-medium leading-relaxed">
-            Consulte a postura correta para cada uma das <strong>letras em libras</strong> para dominar o <strong>alfabeto em libras</strong> passo a passo.
+            Consulte descrições introdutórias para cada letra e use o material como apoio de memorização do <strong>alfabeto em libras</strong>.
           </p>
         </div>
 
@@ -662,7 +665,7 @@ export default function LetrasLibras({ onNotify }: LetrasLibrasProps) {
                   Letra {char} no Alfabeto em Libras
                 </span>
                 <p className="text-[11px] text-slate-500 leading-normal font-medium">
-                  {LIBRAS_DICTIONARY[char]?.description || "Posicione os dedos."} Para fazer as <strong>letras em libras</strong> perfeitamente, treine o formato da letra {char} no <strong>alfabeto em libras</strong>.
+                  {LIBRAS_DICTIONARY[char]?.description || "Posicione os dedos."} Use esta descrição como referência introdutória para reconhecer a letra {char} no <strong>alfabeto em libras</strong>.
                 </p>
               </div>
             </div>
