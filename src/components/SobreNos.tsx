@@ -17,25 +17,25 @@ import {
 export default function SobreNos() {
   const teamMembers = [
     {
-      name: "Carlos Mendes",
-      role: "Especialista Chefe em Engenharia de Fontes & Padrões Unicode",
-      bio: "Mais de 12 anos de experiência em tipografia digital, codificação de caracteres e arquitetura de acessibilidade web para grandes portais.",
-      initials: "CM",
-      tag: "Engenharia Unicode"
+      name: "Equipe de Conteúdo",
+      role: "Curadoria de Ferramentas e Documentação",
+      bio: "Organiza tutoriais, exemplos de uso e descrições das ferramentas, priorizando clareza e informações que possam ser verificadas no próprio site.",
+      initials: "EC",
+      tag: "Conteúdo"
     },
     {
-      name: "Juliana Fontes",
-      role: "Designer Tipográfica & Especialista em Lettering",
-      bio: "Pesquisadora de caligrafia histórica, caligrafia para tatuagens e tipografia urbana contemporânea (street art e grafite).",
-      initials: "JF",
-      tag: "Design & Arte"
+      name: "Equipe Técnica",
+      role: "Manutenção de Geradores e Conversores",
+      bio: "Mantém os conversores no navegador, corrige mapeamentos Unicode e acompanha relatos de incompatibilidade enviados pelos usuários.",
+      initials: "ET",
+      tag: "Engenharia"
     },
     {
-      name: "Rafael Costa",
-      role: "Auditor de Acessibilidade & Compatibilidade Mobile",
-      bio: "Especialista em diretrizes WCAG/W3C e testes de renderização de glifos em iOS, Android e plataformas de jogos competitivos.",
+      name: "Revisão de Compatibilidade",
+      role: "Testes de Interface e Dispositivos",
+      bio: "Verifica fluxos principais em navegadores e tamanhos de tela diferentes. A renderização de alguns glifos pode variar conforme fonte, sistema e aplicativo.",
       initials: "RC",
-      tag: "QA & Acessibilidade"
+      tag: "Compatibilidade"
     }
   ];
 
@@ -66,7 +66,7 @@ export default function SobreNos() {
             O <strong>letradiferentes.org</strong> foi criado com o propósito de democratizar o design tipográfico na internet. Acreditamos que o estilo visual de um texto é uma extensão da identidade pessoal de cada usuário — seja para transmitir profissionalismo na biografia do Instagram, criar uma marca autêntica em jogos como o Free Fire, ou projetar uma caligrafia perfeita para tatuagens e moldes escolares.
           </p>
           <p>
-            Todas as ferramentas e artigos publicados no portal passam por rigorosa verificação técnica de compatibilidade com os padrões internacionais do <strong>Unicode Consortium</strong> (versão 15.0 ou superior), garantindo que os símbolos copiados mantenham sua integridade visual em qualquer dispositivo.
+            As ferramentas de estilização usam caracteres definidos pelo padrão <strong>Unicode</strong> sempre que possível. A aparência e o suporte de determinados glifos podem variar entre sistemas, fontes, navegadores, redes sociais e jogos, por isso mantemos as descrições de compatibilidade de forma conservadora.
           </p>
         </div>
 
