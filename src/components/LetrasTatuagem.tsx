@@ -379,9 +379,9 @@ export default function LetrasTatuagem({ onNotify }: LetrasTatuagemProps) {
           <PenTool className="w-3.5 h-3.5 text-amber-700 animate-pulse" />
           <span>Estúdio de Caligrafia &amp; Arte Corporal Oficial</span>
         </div>
-        <h2 className="font-sans font-black text-3xl md:text-4xl lg:text-5xl text-[#0F172A] tracking-tight leading-tight uppercase">
+        <h1 className="font-sans font-black text-3xl md:text-4xl lg:text-5xl text-[#0F172A] tracking-tight leading-tight uppercase">
           Letras para <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-amber-500 to-indigo-600">Tatuagem</span> &amp; Caligrafia
-        </h2>
+        </h1>
         <p className="text-xs md:text-sm text-slate-500 max-w-3xl leading-relaxed font-semibold font-sans">
           Planeje sua próxima tatuagem escrita com perfeição estética no maior portal de fontes e tipografias do Brasil! 
           Aqui você pode testar, customizar e gerar decalques finos de caligrafia cursiva elegante, letras góticas ancestrais, 
