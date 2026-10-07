@@ -1049,9 +1049,9 @@ export default function LetrasGrafite({ onNotify }: LetrasGrafiteProps) {
           <Palette className="w-3.5 h-3.5 text-pink-600 animate-pulse" />
           <span>Módulo de Letras em Grafite &amp; Spray Digital Oficial</span>
         </div>
-        <h2 className="font-sans font-black text-3xl md:text-4xl lg:text-5xl text-[#0F172A] tracking-tight leading-tight uppercase">
+        <h1 className="font-sans font-black text-3xl md:text-4xl lg:text-5xl text-[#0F172A] tracking-tight leading-tight uppercase">
           Gerador de <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-pink-500 to-amber-500 animate-gradient">Letras em Grafite</span> &amp; Spray Creator
-        </h2>
+        </h1>
         <p className="text-xs md:text-sm text-slate-500 max-w-3xl leading-relaxed font-semibold font-sans">
           Crie e customize assinaturas de arte urbana e tags espetaculares com o nosso gerador de <strong>letras em grafite</strong>! Digite seu apelido ou tag e explore o 
           alfabeto completo de <strong>letras em grafite</strong> em estilo bubble bombing, wildstyle angular ou handstyle realista. 
