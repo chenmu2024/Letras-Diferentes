@@ -151,9 +151,9 @@ export default function TermoHelper({ onNotify }: TermoHelperProps) {
           <HelpCircle className="w-3.5 h-3.5 text-indigo-500 animate-pulse" />
           <span>Assistente de Jogo de Palavras</span>
         </div>
-        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-[#0F172A] tracking-tight leading-tight">
+        <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-[#0F172A] tracking-tight leading-tight">
           Helper para <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-pink-500 to-violet-600">Termo</span> &amp; Letreco
-        </h2>
+        </h1>
         <p className="text-xs md:text-sm text-slate-500 max-w-2xl leading-relaxed font-medium">
           Está travado no Termo, Letreco ou Wordle em português? Filtre instantaneamente as palavras possíveis usando regras de posição, exclusions específicas e estatísticas dinâmicas de probabilidade de letras.
         </p>
