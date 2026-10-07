@@ -784,6 +784,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#FBFBFE] text-[#0F172A] font-sans antialiased flex flex-col relative selection:bg-indigo-500/10 selection:text-indigo-900">
+      <a href="#main-content" className="skip-link">Pular para o conteúdo principal</a>
       {/* Premium dynamic gradient background glows */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-indigo-300/10 to-violet-300/10 rounded-full blur-3xl" />
@@ -792,7 +793,7 @@ export default function App() {
 
       {/* Floating global glass notification toast */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 bg-[#0F172A]/95 text-white backdrop-blur-md font-sans text-xs px-4.5 py-3.5 rounded-2xl shadow-xl border border-white/10 flex items-center gap-2.5 animate-fade-in">
+        <div role="status" aria-live="polite" aria-atomic="true" className="fixed bottom-6 right-6 z-50 bg-[#0F172A]/95 text-white backdrop-blur-md font-sans text-xs px-4.5 py-3.5 rounded-2xl shadow-xl border border-white/10 flex items-center gap-2.5 animate-fade-in">
           <div className="w-5 h-5 bg-indigo-500/20 rounded-lg flex items-center justify-center">
             <Sparkles className="w-3.5 h-3.5 text-[#818CF8]" />
           </div>
@@ -976,7 +977,7 @@ export default function App() {
       </header>
 
       {/* ISOLATED COMPONENT WRAPPER */}
-      <main className="flex-1 p-4 md:p-8 lg:p-12 max-w-6xl mx-auto w-full">
+      <main id="main-content" tabIndex={-1} className="flex-1 p-4 md:p-8 lg:p-12 max-w-6xl mx-auto w-full">
         {/* Isolated Active Tab Indicator Badge (Proves they do not interact) */}
         {activeTab !== "home" && !["sobre", "contato", "privacidade", "termos"].includes(activeTab) && (
           <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-emerald-50/50 border border-emerald-100 rounded-2xl px-5 py-3.5 animate-fade-in">
