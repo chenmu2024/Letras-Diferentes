@@ -62,4 +62,24 @@ for (const slug of routes) {
   assert.ok(!html.includes("pub-0000000000000000"), `Placeholder AdSense publisher ID leaked on /${slug}`);
 }
 
-console.log(`Validated SEO output for ${routes.length} generated routes.`);
+const sitemapPath = path.resolve("dist", "sitemap.xml");
+assert.ok(fs.existsSync(sitemapPath), "Missing sitemap.xml in production output.");
+const sitemap = fs.readFileSync(sitemapPath, "utf8");
+const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
+const expectedUrls = routes.map((slug) => slug ? `${baseUrl}/${slug}` : `${baseUrl}/`);
+assert.equal(new Set(sitemapUrls).size, sitemapUrls.length, "Sitemap contains duplicate URLs.");
+assert.deepEqual([...sitemapUrls].sort(), [...expectedUrls].sort(), "Sitemap URLs do not match generated routes.");
+
+const manifestPath = path.resolve("dist", "site.webmanifest");
+assert.ok(fs.existsSync(manifestPath), "Missing site.webmanifest in production output.");
+const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+assert.equal(manifest.lang, "pt-BR", "Manifest language must be pt-BR.");
+assert.equal(manifest.start_url, "/", "Manifest start_url must point to the homepage.");
+
+const notFoundPath = path.resolve("dist", "404.html");
+assert.ok(fs.existsSync(notFoundPath), "Missing custom 404.html.");
+const notFoundHtml = fs.readFileSync(notFoundPath, "utf8");
+assert.ok(/<meta\s+name=["']robots["']\s+content=["']noindex,follow["']/i.test(notFoundHtml), "404 page must be noindex,follow.");
+assert.ok(/<h1\b[^>]*>Página não encontrada<\/h1>/i.test(notFoundHtml), "404 page must contain a clear H1.");
+
+console.log(`Validated SEO output for ${routes.length} generated routes, sitemap parity, manifest and 404 handling.`);
