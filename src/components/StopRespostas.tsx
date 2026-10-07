@@ -198,9 +198,9 @@ export default function StopRespostas({ onNotify }: StopRespostasProps) {
           <BookOpen className="w-3.5 h-3.5 text-indigo-500 animate-pulse" />
           <span>Estratégia &amp; Alto Rendimento</span>
         </div>
-        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-[#0F172A] tracking-tight leading-tight">
+        <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-[#0F172A] tracking-tight leading-tight">
           Gabarito para <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-pink-500 to-violet-600">Stop &amp; Adedanha</span>
-        </h2>
+        </h1>
         <p className="text-xs md:text-sm text-slate-500 max-w-2xl leading-relaxed font-medium">
           Escreva as respostas mais raras e exclusivas! Consulte o dicionário definitivo de A a Z, teste sua agilidade no simulador com cronômetro e salve suas palavras secretas personalizadas.
         </p>
