@@ -1,6 +1,6 @@
 # LetraDiferentes - Gerador de Letras Diferentes e Fontes Bonitas
 
-[LetraDiferentes](https://letradiferentes.org) é o maior portal gratuito e modular para conversão de fontes estilosas online, com suporte nativo ao padrão Unicode para mídias sociais e jogos competitivos.
+[LetraDiferentes](https://letradiferentes.org) é um portal gratuito e modular para conversão de fontes estilosas online, com suporte nativo ao padrão Unicode para mídias sociais e jogos competitivos.
 
 ## Principais Ferramentas e Recursos
 
@@ -17,4 +17,4 @@
 
 - **100% Baseado em Unicode**: Todos os estilos de letra diferentes produzidos funcionam perfeitamente sem necessidade de instalação de arquivos de fontes (.ttf/.otf) no receptor.
 - **Processamento no Cliente**: A conversão de texto é realizada de forma segura no próprio navegador, garantindo que nenhum dado sensível seja transmitido ou armazenado.
-- **Leve e Rápido**: Desenvolvido em React e Tailwind CSS para oferecer transições instantâneas, total compatibilidade mobile e zero anúncios intrusivos.
+- **Processamento local e interface responsiva**: Desenvolvido em React e Tailwind CSS, com ferramentas que priorizam processamento no navegador e uso em dispositivos móveis.
