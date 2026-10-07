@@ -7,6 +7,9 @@ interface AdSensePlaceholderProps {
 }
 
 export default function AdSensePlaceholder({ slot, className = "" }: AdSensePlaceholderProps) {
+  const showPlaceholder = import.meta.env.DEV || import.meta.env.VITE_SHOW_AD_PLACEHOLDERS === "true";
+  if (!showPlaceholder) return null;
+
   return (
     <div className={`w-full max-w-4xl mx-auto my-6 p-4 rounded-2xl bg-slate-50 border border-dashed border-slate-200 flex flex-col items-center justify-center text-center gap-1.5 transition-all select-none ${className}`}>
       <div className="flex items-center gap-1.5 text-[9px] font-bold text-slate-400 uppercase tracking-widest font-mono">
