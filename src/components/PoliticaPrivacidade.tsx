@@ -10,9 +10,9 @@ export default function PoliticaPrivacidade() {
           <Shield className="w-3.5 h-3.5 text-emerald-600" />
           <span>Segurança &amp; Transparência</span>
         </div>
-        <h2 className="font-sans font-black text-3xl md:text-5xl text-[#0F172A] tracking-tight leading-tight">
+        <h1 className="font-sans font-black text-3xl md:text-5xl text-[#0F172A] tracking-tight leading-tight">
           Política de <span className="bg-gradient-to-r from-emerald-600 to-indigo-600 bg-clip-text text-transparent">Privacidade</span>
-        </h2>
+        </h1>
         <p className="text-sm md:text-base text-slate-500 max-w-2xl mx-auto leading-relaxed">
           Esta política descreve as diretrizes de privacidade adotadas pelo portal <strong className="text-slate-800">letradiferentes.org</strong> para assegurar uma navegação transparente, amigável e segura.
         </p>
