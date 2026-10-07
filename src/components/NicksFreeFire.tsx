@@ -207,7 +207,7 @@ export default function NicksFreeFire({ onNotify }: NicksFreeFireProps) {
               Exclusivo: Oficina Interativa de Letras Diferentes FF
             </div>
             <h3 className="font-display text-lg font-black tracking-tight text-white flex items-center gap-2">
-              Monte seu Nick de Free Fire Personalizado usando Letras Diferentes FF
+              Gerador de Nomes e Nicks para Free Fire com Letras Diferentes
             </h3>
           </div>
           <button
