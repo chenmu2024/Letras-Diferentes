@@ -27,10 +27,28 @@ export default function Contato({ onNotify }: { onNotify: (msg: string) => void 
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (validate()) {
-      setSubmitted(true);
-      onNotify("Mensagem enviada com sucesso!");
-    }
+    if (!validate()) return;
+
+    const subjectLabels: Record<string, string> = {
+      feedback: "Feedback geral",
+      bug: "Relato de bug",
+      sugestao: "Sugestão de nova fonte ou ferramenta",
+      parceria: "Parcerias e anúncios",
+      outros: "Outros assuntos",
+    };
+
+    const subject = `[LetraDiferentes] ${subjectLabels[formData.assunto] || "Contato"}`;
+    const body = [
+      `Nome: ${formData.nome}`,
+      `E-mail para resposta: ${formData.email}`,
+      "",
+      formData.mensagem,
+    ].join("\n");
+
+    const mailtoUrl = `mailto:contato@letradiferentes.org?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+    setSubmitted(true);
+    onNotify("Seu aplicativo de e-mail foi aberto para concluir o envio.");
   };
 
   const handleReset = () => {
@@ -78,7 +96,7 @@ export default function Contato({ onNotify }: { onNotify: (msg: string) => void 
                   <a href="mailto:contato@letradiferentes.org" className="text-sm font-extrabold text-[#4F46E5] hover:underline break-all mt-0.5 block">
                     contato@letradiferentes.org
                   </a>
-                  <p className="text-[11px] text-slate-400 mt-1">Respondemos em até 24 horas úteis.</p>
+                  <p className="text-[11px] text-slate-400 mt-1">Envie sua mensagem diretamente para este endereço.</p>
                 </div>
               </div>
 
@@ -208,7 +226,7 @@ export default function Contato({ onNotify }: { onNotify: (msg: string) => void 
                   className="w-full flex items-center justify-center gap-2 px-5 py-3.5 bg-[#4F46E5] hover:bg-[#3B34B3] text-white font-extrabold rounded-2xl text-xs md:text-sm shadow-lg shadow-indigo-500/20 transition-all cursor-pointer hover:scale-[1.01]"
                 >
                   <Send className="w-4 h-4" />
-                  <span>Enviar Mensagem</span>
+                  <span>Preparar E-mail</span>
                 </button>
               </form>
             ) : (
@@ -217,16 +235,16 @@ export default function Contato({ onNotify }: { onNotify: (msg: string) => void 
                   <CheckCircle className="w-8 h-8" />
                 </div>
                 <div className="space-y-2">
-                  <h3 className="font-sans font-black text-xl text-[#0F172A]">Obrigado por Entrar em Contato!</h3>
+                  <h3 className="font-sans font-black text-xl text-[#0F172A]">E-mail Preparado</h3>
                   <p className="text-xs md:text-sm text-slate-500 max-w-md mx-auto leading-relaxed">
-                    Sua mensagem foi recebida com sucesso por nossa equipe técnica. Analisaremos sua solicitação e responderemos no endereço <strong>{formData.email}</strong> o mais rápido possível.
+                    Preparamos a mensagem no seu aplicativo de e-mail. Revise o conteúdo e toque em enviar para concluir o contato. O endereço informado para resposta é <strong>{formData.email}</strong>.
                   </p>
                 </div>
                 <button
                   onClick={handleReset}
                   className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl text-xs transition-all cursor-pointer"
                 >
-                  Enviar Outra Mensagem
+                  Preparar Outro E-mail
                 </button>
               </div>
             )}
