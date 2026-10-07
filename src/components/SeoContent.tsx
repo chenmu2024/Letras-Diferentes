@@ -64,14 +64,14 @@ export default function SeoContent({ onNavigate }: SeoContentProps) {
       {/* Intro block & Article Header */}
       <header className="space-y-3 text-center md:text-left">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-indigo-100 bg-indigo-50/30 text-[10px] text-[#4F46E5] font-bold tracking-widest uppercase">
-          Guia de Tipografia Digital &amp; SEO 2026
+          Guia de Tipografia Digital
         </div>
         <h2 className="font-sans font-black text-2xl md:text-3xl text-[#0F172A] tracking-tight flex items-center gap-2 justify-center md:justify-start">
           <Sparkles className="w-6 h-6 text-[#4F46E5]" />
           Gerador de Letras Diferentes e Letra Diferentes Oficial
         </h2>
         <p className="text-xs md:text-sm text-slate-500 font-medium font-sans max-w-3xl leading-relaxed">
-          Bem-vindo ao maior portal de <strong>letras diferentes</strong> e <strong>letra diferentes</strong> do Brasil e dos países de língua portuguesa. Nossa plataforma foi desenvolvida para oferecer mais de 100 estilos de fontes elegantes, compatíveis com Instagram, TikTok, WhatsApp, Facebook e Free Fire, tudo de forma 100% gratuita, instantânea e segura.
+          Bem-vindo ao portal gratuito de <strong>letras diferentes</strong> e <strong>letra diferentes</strong>. O gerador oferece dezenas de estilos Unicode e decorações para copiar e testar em Instagram, TikTok, WhatsApp, Facebook, Free Fire e outros aplicativos, sem cadastro.
         </p>
       </header>
 
@@ -310,10 +310,10 @@ export default function SeoContent({ onNavigate }: SeoContentProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-slate-300 leading-relaxed font-sans">
           <div className="space-y-2">
             <p>
-              Todo o conteúdo e a base de caracteres do portal <strong>letradiferentes.org</strong> são auditados periodicamente por nossa equipe técnica em conformidade com as diretrizes do <strong>Unicode Consortium 15.0+</strong> e boas práticas de acessibilidade web (W3C/WCAG).
+              O conteúdo e os mapeamentos de caracteres do <strong>letradiferentes.org</strong> são mantidos e revisados conforme problemas são identificados. Os estilos usam Unicode sempre que aplicável, mas a aparência de cada glifo depende das fontes e do suporte de cada plataforma.
             </p>
             <p>
-              Garantimos que cada glifo passe por testes rigorosos de compatibilidade com os principais navegadores (Chrome, Safari, Firefox, Edge) e sistemas móveis.
+              Priorizamos os navegadores e dispositivos atuais nos testes de interface e corrigimos incompatibilidades reproduzíveis reportadas pelos usuários.
             </p>
           </div>
           <div className="bg-white/5 border border-white/10 rounded-2xl p-4 space-y-2">
@@ -323,7 +323,7 @@ export default function SeoContent({ onNavigate }: SeoContentProps) {
               </div>
               <div>
                 <h4 className="font-bold text-white text-xs">Conselho Editorial de Tipografia</h4>
-                <p className="text-[10px] text-indigo-300">Especialistas em Design Tipográfico e Engenharia de Software</p>
+                <p className="text-[10px] text-indigo-300">Curadoria de Conteúdo e Manutenção Técnica</p>
               </div>
             </div>
             <p className="text-[11px] text-slate-400 pt-1">
