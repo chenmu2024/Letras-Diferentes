@@ -138,7 +138,7 @@ export default function SeoContent({ onNavigate }: SeoContentProps) {
               Padrão Universal Unicode
             </h4>
             <p className="text-xs text-slate-500 font-medium leading-relaxed">
-              O consórcio Unicode catalogou mais de 149.000 caracteres, incluindo alfabetos matemáticos, góticos e símbolos decorativos que servem de base para as <strong>letras diferentes</strong>.
+              O padrão Unicode inclui blocos de caracteres matemáticos, alfabetos estilizados e inúmeros símbolos que podem ser combinados para criar <strong>letras diferentes</strong> sem instalar uma fonte no dispositivo.
             </p>
           </div>
 
@@ -191,7 +191,7 @@ export default function SeoContent({ onNavigate }: SeoContentProps) {
                 Jogos Competitivos (Free Fire, Roblox, LoL)
               </h4>
               <p>
-                No universo gamer, ter um nick personalizado com <strong>letras diferentes</strong>, asas (꧁ ꧂), raios (⚡) e espaços invisíveis impõe respeito e autenticidade. O Free Fire e o PUBG reconhecem integralmente nossos caracteres especiais.
+                No universo gamer, um nick personalizado com <strong>letras diferentes</strong>, molduras (꧁ ꧂), raios (⚡) e espaços especiais pode ajudar a diferenciar o perfil. A compatibilidade depende das regras e da fonte usada por cada jogo integralmente nossos caracteres especiais.
               </p>
             </div>
           </div>
@@ -273,7 +273,7 @@ export default function SeoContent({ onNavigate }: SeoContentProps) {
 
             <div className="space-y-1.5 p-4 rounded-2xl bg-slate-50/70 border border-slate-100">
               <h4 className="font-extrabold text-[#0F172A] text-xs">As fontes funcionam em todos os celulares?</h4>
-              <p>Sim. Como utilizamos caracteres Unicode universais, eles são suportados nativamente por Android, iOS (iPhone/iPad), Windows e Mac sem necessidade de apps de terceiros.</p>
+              <p>Na maioria dos casos, sim. Os resultados usam caracteres Unicode, mas alguns símbolos podem aparecer de forma diferente ou não ser aceitos dependendo da fonte, versão do sistema, aplicativo ou jogo.</p>
             </div>
           </div>
 
@@ -285,7 +285,7 @@ export default function SeoContent({ onNavigate }: SeoContentProps) {
 
             <div className="space-y-1.5 p-4 rounded-2xl bg-slate-50/70 border border-slate-100">
               <h4 className="font-extrabold text-[#0F172A] text-xs">Posso usar as fontes geradas para fins comerciais?</h4>
-              <p>Sim! Você pode usar livremente as <strong>letras diferentes</strong> em artes publicitárias, banners, logotipos informais, posts de venda e catálogos no WhatsApp Business.</p>
+              <p>Você pode copiar os caracteres gerados para bios, posts, catálogos e materiais informais. Para logotipos, marcas registradas ou materiais comerciais formais, confirme também as regras da plataforma e os direitos dos demais elementos usados no design.</p>
             </div>
           </div>
         </div>
