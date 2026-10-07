@@ -195,7 +195,7 @@ export default function NicksFreeFire({ onNotify }: NicksFreeFireProps) {
           Nicks de <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-red-500 to-indigo-600">Free Fire</span>, Símbolos Pro &amp; Letras Diferentes FF
         </h1>
         <p className="text-xs md:text-sm text-slate-500 max-w-2xl leading-relaxed font-semibold">
-          Gere nicks de Free Fire apelões com <span className="text-orange-600">letras diferentes ff</span> de alta qualidade. Copie símbolos especiais, verificado Ⓥ, raios, asas e o famoso espaço invisível com <span className="text-orange-600">letras diferentes ff</span> para se destacar no lobby. Use nossa oficina inteligente de <span className="text-orange-600">letras diferentes ff</span> para montar e testar o tamanho oficial do seu apelido!
+          Crie nicks para Free Fire com <span className="text-orange-600">letras diferentes FF</span>, símbolos decorativos, raios, asas e espaços especiais. O símbolo Ⓥ disponível aqui é apenas decorativo e não representa verificação oficial. Monte combinações e teste o resultado diretamente no jogo antes de confirmar o apelido.
         </p>
       </div>
 
@@ -231,7 +231,7 @@ export default function NicksFreeFire({ onNotify }: NicksFreeFireProps) {
             <span className="w-2.5 h-2.5 rounded-full bg-green-500" />
           </div>
           <span className="text-[9px] uppercase tracking-widest text-slate-500 font-mono block">
-            Visualização dentro do Jogo com suas letras diferentes ff (Free Fire HUD)
+            Prévia visual do nick com letras diferentes FF
           </span>
 
           {/* Glowing Nick Output */}
@@ -244,7 +244,7 @@ export default function NicksFreeFire({ onNotify }: NicksFreeFireProps) {
           {/* Limit character indicator */}
           <div className="flex items-center justify-center gap-4 border-t border-slate-900 pt-3">
             <div className="flex items-center gap-1.5 text-xs">
-              <span className="text-slate-400">Tamanho total do nick com letras diferentes ff:</span>
+              <span className="text-slate-400">Tamanho da composição:</span>
               <span className={`font-mono font-black px-2 py-0.5 rounded ${
                 builderOutput.length > 12 ? "bg-red-500/20 text-red-400" : "bg-emerald-500/20 text-emerald-400"
               }`}>
@@ -587,10 +587,10 @@ export default function NicksFreeFire({ onNotify }: NicksFreeFireProps) {
         <div>
           <h3 className="font-display text-lg font-black text-[#0F172A] flex items-center gap-2">
             <Award className="w-5 h-5 text-orange-500" />
-            Catálogo de Letras Diferentes FF e Nomes de Free Fire Famosos
+            Ideias de Nicks e Letras Diferentes para Free Fire
           </h3>
           <p className="text-xs text-slate-500">
-            Inspire-se ou use diretamente as <span className="text-orange-600 font-bold">letras diferentes ff</span> mais temidas e estilosas prontas para o ranking de FF.
+            Use as combinações abaixo como inspiração e ajuste o nome, os símbolos e o tamanho de acordo com o que o jogo aceitar.
           </p>
         </div>
 
@@ -662,10 +662,10 @@ export default function NicksFreeFire({ onNotify }: NicksFreeFireProps) {
         <div>
           <h3 className="font-display text-lg font-black text-[#0F172A] flex items-center gap-2">
             <Sparkles className="w-5 h-5 text-orange-500" />
-            Catálogo Completo de Símbolos e Letras Diferentes FF para Copiar
+            Símbolos e Letras Diferentes FF para Copiar
           </h3>
           <p className="text-xs text-slate-500">
-            Dê um toque pro-player ao seu nick usando <span className="text-orange-600 font-bold">letras diferentes ff</span> modernas. Clique nos símbolos especiais abaixo para copiar instantaneamente e monte suas próprias letras diferentes ff de combate na nossa oficina acima.
+            Escolha símbolos decorativos para combinar com seu nick. A compatibilidade varia por dispositivo e pelas regras atuais do jogo, então teste a combinação antes de confirmar o nome.
           </p>
         </div>
 
@@ -707,26 +707,34 @@ export default function NicksFreeFire({ onNotify }: NicksFreeFireProps) {
         <div className="border-b border-slate-200 pb-4">
           <h3 className="font-display text-lg font-black text-[#0F172A] flex items-center gap-2">
             <HelpCircle className="w-5 h-5 text-orange-500" />
-            Como Mudar o Apelido no Free Fire usando Letras Diferentes FF? Dúvidas e Dicas
+            Como Mudar o Nick no Free Fire e Usar Letras Diferentes?
           </h3>
           <p className="text-xs text-slate-400 font-medium">
-            Entenda como funciona o sistema de nicks no jogo, cartões de mudança de nome e limites permitidos para letras diferentes ff.
+            Veja orientações práticas sobre troca de nickname, caracteres especiais e compatibilidade antes de aplicar um novo nome.
           </p>
+          <a
+            href="https://ffsuporte.garena.com/support/solutions/articles/154000130473-como-faco-para-trocar-meu-nickname-"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex text-[11px] font-bold text-orange-600 hover:text-orange-700 underline underline-offset-2"
+          >
+            Consultar orientação oficial da Garena Brasil sobre troca de nickname ↗
+          </a>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-slate-600 leading-relaxed">
           <div className="space-y-4 font-semibold">
             <div className="space-y-1">
-              <h4 className="font-black text-slate-800 text-sm">1. Quantas letras diferentes ff posso usar no Nick do FF?</h4>
+              <h4 className="font-black text-slate-800 text-sm">1. Existe um limite fixo para letras e símbolos no nick?</h4>
               <p className="text-slate-500 font-medium">
-                A Garena estabelece um limite de 12 caracteres para o nome de usuário no perfil. Símbolos de decorações, espaço invisível e <span className="text-orange-600">letras diferentes ff</span> contam para o limite total. Certifique-se de que sua combinação de letras diferentes ff fique dentro do limite de tamanho estabelecido no jogo! Nossa oficina inteligente de letras diferentes ff calcula as dimensões do nick em tempo real!
+                A página oficial de suporte consultada não publica um limite universal de caracteres nessa orientação. Use o contador apenas como referência de tamanho e confirme a combinação dentro do próprio Free Fire, porque regras de nome e caracteres aceitos podem mudar.
               </p>
             </div>
 
             <div className="space-y-1">
-              <h4 className="font-black text-slate-800 text-sm">2. Como conseguir o Cartão de Mudança para aplicar minhas letras diferentes ff?</h4>
+              <h4 className="font-black text-slate-800 text-sm">2. Como trocar o nickname no Free Fire?</h4>
               <p className="text-slate-500 font-medium">
-                Você pode trocar de nick para exibir suas novas <span className="text-orange-600">letras diferentes ff</span> usando 800 diamantes ou adquirindo um Cartão de Mudança de Apelido na loja da guilda para colocar letras diferentes ff no seu perfil do Free Fire.
+                Segundo o suporte oficial da Garena Brasil, a troca de nickname pode ser feita usando Diamantes ou um Cartão de Alteração de Nickname. Valores e formas de obtenção podem mudar; confira as opções mostradas no jogo no momento da alteração.
               </p>
             </div>
           </div>
@@ -735,14 +743,14 @@ export default function NicksFreeFire({ onNotify }: NicksFreeFireProps) {
             <div className="space-y-1">
               <h4 className="font-black text-slate-800 text-sm">3. Por que algumas letras diferentes ff não aparecem no meu celular?</h4>
               <p className="text-slate-500 font-medium">
-                Símbolos e <span className="text-orange-600">letras diferentes ff</span> raras dependem das fontes instaladas no sistema operacional do seu celular (Android ou iOS). Caso alguma das letras diferentes ff apareça como um quadrado vazio no teclado, outros jogadores ainda poderão ver suas letras diferentes ff normalmente dentro da partida de FF.
+                Símbolos e <span className="text-orange-600">letras diferentes FF</span> dependem das fontes e do suporte do dispositivo e do próprio jogo. Se um caractere aparecer como quadrado, vazio ou for recusado, prefira uma opção mais simples; não é possível garantir como ele aparecerá para outros jogadores.
               </p>
             </div>
 
             <div className="space-y-1">
-              <h4 className="font-black text-slate-800 text-sm">4. Símbolo de Verificado combina com letras diferentes ff?</h4>
+              <h4 className="font-black text-slate-800 text-sm">4. O símbolo Ⓥ deixa a conta verificada?</h4>
               <p className="text-slate-500 font-medium">
-                Sim! O selo de verificado oficial e tags de clãs ficam perfeitos ao lado de <span className="text-orange-600">letras diferentes ff</span> no perfil do Free Fire, gerando nicks personalizados com letras diferentes ff incríveis para chamar a atenção dos oponentes.
+                Não. O caractere Ⓥ desta ferramenta é apenas um símbolo decorativo para copiar e colar. Ele não cria, imita oficialmente nem concede qualquer status de verificação da Garena.
               </p>
             </div>
           </div>
@@ -754,7 +762,7 @@ export default function NicksFreeFire({ onNotify }: NicksFreeFireProps) {
             🔥 Como Criar Letras Diferentes FF de Forma Avançada?
           </span>
           <p className="text-slate-500 font-semibold leading-relaxed">
-            Se você quer converter seu apelido com fontes góticas, elegantes ou cursivas de <span className="text-orange-600 font-bold">letras diferentes ff</span>, use a nossa ferramenta principal de letras diferentes ff no menu superior do site. Basta digitar seu nick para gerar milhares de letras diferentes ff e depois decorá-las com os símbolos mais irados das guildas!
+            Para testar fontes góticas, cursivas e outras variações de <span className="text-orange-600 font-bold">letras diferentes FF</span>, use o gerador principal do site e depois combine o resultado com os símbolos desta página.
           </p>
         </div>
       </div>
