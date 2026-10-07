@@ -1,0 +1,25 @@
+{
+  "name": "LetraDiferentes",
+  "short_name": "LetraDiferentes",
+  "description": "Gerador gratuito de letras diferentes, símbolos, nicks e ferramentas de texto.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FBFBFE",
+  "theme_color": "#4F46E5",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
