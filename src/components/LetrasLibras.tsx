@@ -152,9 +152,9 @@ export default function LetrasLibras({ onNotify }: LetrasLibrasProps) {
           <BookOpen className="w-3.5 h-3.5 text-indigo-500 animate-pulse" />
           <span>Inclusão &amp; Aprendizado Interativo</span>
         </div>
-        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-[#0F172A] tracking-tight leading-tight">
+        <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-[#0F172A] tracking-tight leading-tight">
           Alfabeto em <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-pink-500 to-violet-600">Libras</span> Interativo
-        </h2>
+        </h1>
         <p className="text-xs md:text-sm text-slate-500 max-w-2xl leading-relaxed font-medium">
           Aprenda a Língua Brasileira de Sinais (Libras). Explore as 26 letras do alfabeto datilológico (soletrado), controle velocidades de soletração, desafie-se com o quiz interativo e use cartões didáticos flipáveis.
         </p>
