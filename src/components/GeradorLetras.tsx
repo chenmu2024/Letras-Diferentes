@@ -753,7 +753,7 @@ export default function GeradorLetras({ onNotify, onNavigate }: GeradorLetrasPro
             Índice de Utilitários Independentes
           </h3>
           <p className="text-xs text-slate-500 font-medium font-sans max-w-2xl leading-relaxed">
-            Cada ferramenta do Universo LetraDiferentes opera de forma 100% modular e isolada. Sinta-se à vontade para navegar e alternar entre os módulos com total segurança e performance instantânea.
+            Cada ferramenta do LetraDiferentes possui controles próprios e pode ser acessada separadamente. Você pode alternar entre os módulos sem perder o contexto principal de navegação.
           </p>
         </div>
 
@@ -814,15 +814,15 @@ export default function GeradorLetras({ onNotify, onNavigate }: GeradorLetrasPro
             },
             {
               q: "Essas letras personalizadas funcionam em todos os celulares?",
-              a: "Sim, a grande maioria dos estilos gerados utiliza caracteres Unicode especiais, que são suportados nativamente pelo Android, iOS (iPhone), Windows e macOS. Alguns dispositivos muito antigos ou sistemas desatualizados podem exibir pequenos quadrados em estilos de fontes extremamente complexas, mas as opções principais são compatíveis com 100% dos smartphones modernos."
+              a: "A maioria dos estilos usa caracteres Unicode, mas a renderização depende da fonte e do suporte de cada sistema, navegador e aplicativo. Se algum símbolo aparecer como quadrado ou não for aceito, escolha uma variação mais simples."
             },
             {
               q: "O uso dessas fontes estilizadas é 100% gratuito?",
-              a: "Com certeza! Todo o portal LetraDiferentes.org é gratuito, seguro e livre de anúncios invasivos ou pop-ups de spam. Você pode gerar, personalizar e copiar quantas combinações de fontes e símbolos desejar sem nenhum limite ou cadastro prévio."
+              a: "O uso das ferramentas do portal é gratuito e não exige cadastro. Você pode gerar, personalizar e copiar diferentes combinações de fontes e símbolos diretamente no navegador."
             },
             {
               q: "As letras diferentes podem ser usadas como nick no Free Fire ou outros jogos?",
-              a: "Sim! Nosso gerador de fontes e o módulo dedicado de 'Nicks Free Fire' são amplamente compatíveis com jogos populares como Free Fire, PUBG Mobile, Roblox, Brawl Stars e Fortnite. Lembre-se apenas de respeitar o limite total de caracteres permitido pelo próprio jogo ao criar seu apelido."
+              a: "Você pode testar os resultados em Free Fire e outros jogos, mas cada plataforma define seus próprios limites de tamanho e caracteres aceitos. Se um nick for recusado, reduza o tamanho ou remova símbolos decorativos."
             }
           ].map((item, index) => {
             const isOpen = faqOpenIdx === index;
