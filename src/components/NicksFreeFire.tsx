@@ -35,7 +35,7 @@ export default function NicksFreeFire({ onNotify }: NicksFreeFireProps) {
   const [builderName, setBuilderName] = useState("APELÃO");
   const [builderSpace, setBuilderSpace] = useState("ㅤ"); // Invisible space
   const [builderSuffix, setBuilderSuffix] = useState("༻꧂");
-  const [builderTag, setBuilderTag] = useState("Ⓥ"); // Verified badge by default
+  const [builderTag, setBuilderTag] = useState("Ⓥ"); // Decorative symbol only
 
   const handleCopy = (text: string, id: string) => {
     navigator.clipboard.writeText(text);
@@ -44,15 +44,11 @@ export default function NicksFreeFire({ onNotify }: NicksFreeFireProps) {
     setTimeout(() => setCopiedId(null), 2000);
   };
 
-  // Helper to copy and immediately inform about character length
+  // Copy the composition without claiming a fixed in-game character limit.
   const handleCopyBuilder = (text: string, id: string) => {
-    if (text.length > 12) {
-      onNotify("Aviso: Seu nick tem mais de 12 caracteres e pode ser cortado no FF! Mas foi copiado! ⚠️");
-    } else {
-      onNotify("Nick customizado copiado! Pronto para usar no Free Fire! 🏆");
-    }
     navigator.clipboard.writeText(text);
     setCopiedId(id);
+    onNotify(`Nick copiado (${text.length} caracteres). Confirme a aceitação diretamente no Free Fire. 🎮`);
     setTimeout(() => setCopiedId(null), 2000);
   };
 
@@ -241,26 +237,17 @@ export default function NicksFreeFire({ onNotify }: NicksFreeFireProps) {
             </span>
           </div>
 
-          {/* Limit character indicator */}
-          <div className="flex items-center justify-center gap-4 border-t border-slate-900 pt-3">
+          {/* Informational character count. Acceptance rules belong to the game. */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 border-t border-slate-900 pt-3">
             <div className="flex items-center gap-1.5 text-xs">
               <span className="text-slate-400">Tamanho da composição:</span>
-              <span className={`font-mono font-black px-2 py-0.5 rounded ${
-                builderOutput.length > 12 ? "bg-red-500/20 text-red-400" : "bg-emerald-500/20 text-emerald-400"
-              }`}>
-                {builderOutput.length} / 12 caracteres
+              <span className="font-mono font-black px-2 py-0.5 rounded bg-slate-800 text-orange-300">
+                {builderOutput.length} caracteres
               </span>
             </div>
-
-            {builderOutput.length > 12 ? (
-              <span className="text-[10px] text-red-400 font-bold flex items-center gap-1 animate-pulse">
-                ⚠️ Limite Excedido (Máx 12 no FF)
-              </span>
-            ) : (
-              <span className="text-[10px] text-emerald-400 font-bold flex items-center gap-1">
-                ✅ Letras Diferentes FF Válidas
-              </span>
-            )}
+            <span className="text-[10px] text-slate-500 font-semibold">
+              Confirme a aceitação diretamente no jogo.
+            </span>
           </div>
         </div>
 
@@ -296,7 +283,6 @@ export default function NicksFreeFire({ onNotify }: NicksFreeFireProps) {
               value={builderName}
               onChange={(e) => setBuilderName(e.target.value.toUpperCase())}
               placeholder="NOME"
-              maxLength={12}
               className="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white font-bold uppercase tracking-wider focus:outline-none focus:ring-2 focus:ring-orange-500/50"
             />
           </div>
@@ -387,7 +373,7 @@ export default function NicksFreeFire({ onNotify }: NicksFreeFireProps) {
             Central do Espaço Invisível para Letras Diferentes FF (Letra Oculta Free Fire)
           </h3>
           <p className="text-xs text-slate-500 mt-1">
-            Como o Free Fire bloqueia o espaço comum do teclado, utilize estes caracteres Unicode especiais combinados com suas <span className="text-orange-600 font-semibold">letras diferentes ff</span> para dar espaçamento de forma profissional.
+            Alguns jogadores testam caracteres Unicode de largura especial para criar separação visual em nicks. A aceitação pode variar conforme a versão, o dispositivo e as regras atuais do Free Fire; copie e teste antes de confirmar o apelido.
           </p>
         </div>
 
@@ -400,7 +386,7 @@ export default function NicksFreeFire({ onNotify }: NicksFreeFireProps) {
               </span>
               <h4 className="text-xs font-black text-slate-800">Espaço Invisível Grande para Letras Diferentes FF</h4>
               <p className="text-[11px] text-slate-500 leading-relaxed font-medium">
-                Caractere padrão Unicode HANGUL FILLER (U+3164). Perfeito para afastar suas letras diferentes ff.
+                Caractere Unicode HANGUL FILLER (U+3164). Pode produzir um espaço visual em alguns contextos, mas a aceitação no jogo não é garantida.
               </p>
             </div>
             <div className="pt-2 flex items-center gap-2 justify-between">
@@ -539,7 +525,6 @@ export default function NicksFreeFire({ onNotify }: NicksFreeFireProps) {
               value={nickInput}
               onChange={(e) => setNickInput(e.target.value)}
               placeholder="Escreva um apelido simples para estilizar com letras diferentes ff..."
-              maxLength={14}
               className="w-full bg-[#F8FAFC]/50 border border-[#E2E8F0] rounded-xl px-4 py-2.5 text-[#0F172A] font-sans focus:outline-none focus:ring-2 focus:ring-[#4F46E5]/15 focus:border-slate-400 text-sm font-semibold"
             />
           </div>
