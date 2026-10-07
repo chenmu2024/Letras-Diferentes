@@ -34,11 +34,5 @@ jobs:
       - name: Production build
         run: npm run build
 
-      - name: Verify generated routes
-        run: |
-          test -f dist/index.html
-          test -f dist/tatuagem/index.html
-          test -f dist/grafite/index.html
-          test -f dist/ff-nicks/index.html
-          test -f dist/termo-helper/index.html
-          test -f dist/stop-respostas/index.html
+      - name: Validate generated SEO
+        run: npm run test:seo
