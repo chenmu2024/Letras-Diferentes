@@ -234,11 +234,11 @@ for (const route of routes) {
   );
 
   const rootStart = html.indexOf('<div id="root">');
-  const scriptStart = html.indexOf('<script type="module"', rootStart);
-  if (rootStart === -1 || scriptStart === -1) {
-    throw new Error(`Could not locate root/script markers for route ${route.slug || "/"}`);
+  const bodyEnd = html.lastIndexOf("</body>");
+  if (rootStart === -1 || bodyEnd === -1 || bodyEnd <= rootStart) {
+    throw new Error(`Could not locate root/body markers for route ${route.slug || "/"}`);
   }
-  html = html.slice(0, rootStart) + `<div id="root">${staticFallback(route)}</div>\n    ` + html.slice(scriptStart);
+  html = html.slice(0, rootStart) + `<div id="root">${staticFallback(route)}</div>\n  ` + html.slice(bodyEnd);
 
   const outputPath = route.slug
     ? path.join(distDir, route.slug, "index.html")
