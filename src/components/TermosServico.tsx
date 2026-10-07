@@ -10,9 +10,9 @@ export default function TermosServico() {
           <FileText className="w-3.5 h-3.5 text-violet-600" />
           <span>Regras de Utilização</span>
         </div>
-        <h2 className="font-sans font-black text-3xl md:text-5xl text-[#0F172A] tracking-tight leading-tight">
+        <h1 className="font-sans font-black text-3xl md:text-5xl text-[#0F172A] tracking-tight leading-tight">
           Termos de <span className="bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">Serviço</span>
-        </h2>
+        </h1>
         <p className="text-sm md:text-base text-slate-500 max-w-2xl mx-auto leading-relaxed">
           Estes termos regulam as condições gerais de acesso e uso do portal <strong className="text-slate-800">letradiferentes.org</strong> por qualquer visitante da nossa plataforma.
         </p>
