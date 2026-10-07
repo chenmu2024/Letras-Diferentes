@@ -343,7 +343,7 @@ export default function App() {
       },
       "ff-nicks": {
         title: "Nicks Free Fire - Símbolos e Apelidos Personalizados FF",
-        desc: "Crie nicks estilosos para Free Fire e outros jogos. Combine letras diferentes, símbolos especiais de asa, raio, cruz e espaços invisíveis.",
+        desc: "Crie nomes e nicks para Free Fire com letras diferentes, símbolos decorativos e espaços especiais. Copie combinações e teste a aceitação no jogo.",
         schema: {
           "@context": "https://schema.org",
           "@graph": [
@@ -351,7 +351,7 @@ export default function App() {
               "@type": "WebApplication",
               "name": "Gerador de Nicks Free Fire",
               "url": "https://letradiferentes.org/ff-nicks",
-              "description": "Crie nicks estilosos para Free Fire e outros jogos. Combine letras diferentes, símbolos especiais de asa, raio, cruz e espaços invisíveis.",
+              "description": "Crie nomes e nicks para Free Fire com letras diferentes, símbolos decorativos e espaços especiais. Copie combinações e teste a aceitação no jogo.",
               "applicationCategory": "UtilityApplication",
               "operatingSystem": "All"
             },
@@ -572,12 +572,12 @@ export default function App() {
 
       // 2b. Update meta keywords dynamically
       const keywordsMap: Record<TabId, string> = {
-        home: "letras diferentes, gerador de fontes, letras bonitas, copiar e colar fontes, fontes para instagram, nicks free fire, letras personalizadas",
+        home: "letras diferentes, gerador de fontes, conversor de letras, letras bonitas, copiar e colar fontes, fontes para instagram, nicks free fire, letras personalizadas",
         tatuagem: "letras para tatuagem, fontes de tatuagem, caligrafia para tatuagem, ideias de tatuagem escrita, simulador de tatuagem",
         grafite: "letras de grafite, alfabeto de grafite, gerador de grafite, letras estilosas de rua, grafite online",
         pequenas: "letras pequenas, letras miudas, letra pequena nick, sobrescrito e subscrito, gerador de letra pequena",
         moldes: "moldes de letras, molde de letra para imprimir, letras grandes para recortar, moldes eva, moldes de alfabeto",
-        "ff-nicks": "nicks free fire, simbolos ff, nomes para free fire, espaco invisivel ff, gerador de nick, nicks masculinos ff",
+        "ff-nicks": "nicks free fire, gerador de nomes para free fire, letras para free fire, simbolos ff, nomes para free fire, espaco invisivel ff, gerador de nick",
         maiusculas: "letras maiusculas, caixa alta e baixa, conversor de texto, inverter maiusculas e minusculas, formatar texto",
         libras: "letras em libras, alfabeto em libras, lingua brasileira de sinais, tradutor libras, sinais de libras",
         "termo-helper": "termo helper, solucionador termo, dicas jogo termo, resposta termo, wordle helper, decifrar termo",
