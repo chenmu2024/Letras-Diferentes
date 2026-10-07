@@ -28,6 +28,9 @@ jobs:
       - name: TypeScript check
         run: npm run check
 
+      - name: Unicode regression tests
+        run: npm run test:unicode
+
       - name: Production build
         run: npm run build
 
