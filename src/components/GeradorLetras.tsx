@@ -172,9 +172,9 @@ export default function GeradorLetras({ onNotify, onNavigate }: GeradorLetrasPro
           <Sparkles className="w-3.5 h-3.5 animate-pulse text-indigo-500" />
           <span>Estúdio de Tipografia e Arte</span>
         </div>
-        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-[#0F172A] tracking-tight leading-tight">
+        <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-[#0F172A] tracking-tight leading-tight">
           Gerador de Letras <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-violet-600 to-pink-600">Diferentes</span> e Fontes
-        </h2>
+        </h1>
         <p className="text-xs md:text-sm text-slate-500 max-w-2xl leading-relaxed font-medium">
           Transforme seu texto em estilos de <strong>letras diferentes</strong> e <strong>letra diferentes</strong> de forma imediata com nosso gerador gratuito de <strong>letras diferentes</strong> e <strong>letra diferentes</strong>. Copie e cole suas <strong>letras diferentes</strong> favoritas para usar no seu perfil do Instagram, TikTok, WhatsApp ou apelidos de jogos com total praticidade.
         </p>
