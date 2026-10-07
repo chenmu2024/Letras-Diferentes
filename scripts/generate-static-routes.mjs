@@ -15,7 +15,7 @@ const routes = [
     slug: "",
     title: "Letras Diferentes - Gerador de Fontes e Letras Bonitas",
     description: "Gerador gratuito de letras diferentes e bonitas para copiar e colar no Instagram, TikTok, WhatsApp, Free Fire e outras plataformas.",
-    keywords: "letras diferentes, gerador de fontes, letras bonitas, copiar e colar fontes, fontes para instagram, nicks free fire, letras personalizadas",
+    keywords: "letras diferentes, gerador de fontes, conversor de letras, letras bonitas, copiar e colar fontes, fontes para instagram, nicks free fire, letras personalizadas",
     h1: "Letras Diferentes e Fontes Bonitas",
     summary: "Digite seu texto e transforme-o em dezenas de estilos Unicode e decorações para copiar, comparar e usar em perfis, bios, legendas e nicks."
   },
@@ -54,8 +54,8 @@ const routes = [
   {
     slug: "ff-nicks",
     title: "Nicks Free Fire - Símbolos e Apelidos Personalizados FF",
-    description: "Crie nicks para Free Fire com símbolos, espaços invisíveis e combinações decorativas prontas para copiar.",
-    keywords: "nicks free fire, simbolos ff, nomes para free fire, espaco invisivel ff, gerador de nick, nicks masculinos ff",
+    description: "Crie nomes e nicks para Free Fire com letras diferentes, símbolos decorativos e espaços especiais. Copie combinações e teste a aceitação no jogo.",
+    keywords: "nicks free fire, gerador de nomes para free fire, letras para free fire, simbolos ff, nomes para free fire, espaco invisivel ff, gerador de nick",
     h1: "Nicks Free Fire e Símbolos",
     summary: "Combine nomes, símbolos e espaços especiais para montar apelidos de Free Fire e testar diferentes estilos."
   },
