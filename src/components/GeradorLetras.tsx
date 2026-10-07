@@ -176,7 +176,7 @@ export default function GeradorLetras({ onNotify, onNavigate }: GeradorLetrasPro
           Gerador de Letras <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-violet-600 to-pink-600">Diferentes</span> e Fontes
         </h1>
         <p className="text-xs md:text-sm text-slate-500 max-w-2xl leading-relaxed font-medium">
-          Transforme seu texto em estilos de <strong>letras diferentes</strong> e <strong>letra diferentes</strong> de forma imediata com nosso gerador gratuito de <strong>letras diferentes</strong> e <strong>letra diferentes</strong>. Copie e cole suas <strong>letras diferentes</strong> favoritas para usar no seu perfil do Instagram, TikTok, WhatsApp ou apelidos de jogos com total praticidade.
+          Use este <strong>gerador e conversor de letras bonitas</strong> para transformar texto comum em estilos de <strong>letras diferentes</strong>. Compare as opções, copie a variação que preferir e teste em Instagram, TikTok, WhatsApp, bios, legendas e nicks de jogos.
         </p>
       </div>
 
