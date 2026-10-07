@@ -125,6 +125,152 @@ const routes = [
   }
 ];
 
+const staticGuides = {
+  "": [
+    {
+      heading: "Como funciona o gerador de letras diferentes",
+      body: "O gerador transforma letras e números comuns em variantes Unicode e efeitos decorativos diretamente no navegador. Você pode digitar um nome, frase, bio ou nick, comparar os resultados e copiar apenas o estilo que preferir."
+    },
+    {
+      heading: "Onde usar letras bonitas e fontes estilizadas",
+      body: "Os resultados podem ser testados em bios, legendas, mensagens e nomes de perfil no Instagram, TikTok, WhatsApp e jogos. A aparência e a aceitação de alguns caracteres variam conforme a fonte, o sistema e as regras de cada plataforma."
+    }
+  ],
+  tatuagem: [
+    {
+      heading: "Como criar letras para tatuagem",
+      body: "Digite a palavra ou frase, escolha um estilo visual e ajuste tamanho, espaçamento, curvatura e composição. A ferramenta serve para explorar referências de lettering antes de conversar com o tatuador sobre o desenho final."
+    },
+    {
+      heading: "Prévia e exportação",
+      body: "A composição pode ser preparada para visualização e exportação em SVG. O resultado é uma referência gráfica; proporção, legibilidade e aplicação sobre a pele devem ser avaliadas por um profissional antes da tatuagem definitiva."
+    }
+  ],
+  grafite: [
+    {
+      heading: "Como montar letras de grafite online",
+      body: "Use o editor para criar uma tag ou nome, testar estilos urbanos, alterar cores, contornos, espaçamento e fundos. A prévia ajuda a comparar composições antes de exportar o desenho."
+    },
+    {
+      heading: "SVG para continuar editando",
+      body: "A ferramenta permite gerar uma composição vetorial em SVG, formato útil para impressão e edição em programas compatíveis. O visual final pode variar de acordo com a fonte disponível no dispositivo."
+    }
+  ],
+  pequenas: [
+    {
+      heading: "Letras pequenas, sobrescrito e subscrito",
+      body: "O conversor combina caracteres Unicode que lembram letras menores acima ou abaixo da linha normal. É útil para nicks, bios, marcações curtas e textos decorativos que precisam ser copiados e colados."
+    },
+    {
+      heading: "Limites de compatibilidade",
+      body: "Nem todas as letras possuem uma versão Unicode de sobrescrito ou subscrito equivalente. Por isso, alguns caracteres podem permanecer no formato normal ou usar a alternativa visual mais próxima."
+    }
+  ],
+  moldes: [
+    {
+      heading: "Moldes de letras para imprimir",
+      body: "Escolha uma letra, palavra, número ou símbolo, ajuste o estilo e prepare o conteúdo para impressão. Os moldes podem apoiar cartazes, trabalhos escolares, pintura, recorte, EVA e outros projetos manuais."
+    },
+    {
+      heading: "Antes de imprimir",
+      body: "Confira o tamanho do papel, margens e escala na prévia de impressão. Para projetos que exigem medidas exatas, faça um teste em uma folha antes de produzir várias cópias."
+    }
+  ],
+  "ff-nicks": [
+    {
+      heading: "Gerador de nicks para Free Fire",
+      body: "Combine um nome-base com símbolos, molduras, letras estilizadas e espaços especiais para criar variações de nick. Os resultados podem ser copiados individualmente e testados no jogo."
+    },
+    {
+      heading: "Símbolos aceitos podem variar",
+      body: "Jogos podem limitar tamanho, caracteres e símbolos permitidos, e essas regras podem mudar. Se um nick não for aceito, teste uma versão mais curta ou remova caracteres decorativos."
+    }
+  ],
+  maiusculas: [
+    {
+      heading: "Conversor de maiúsculas e minúsculas",
+      body: "Transforme textos entre caixa alta, caixa baixa, título, frase e formatos usados em programação, como camelCase, PascalCase, snake_case e kebab-case."
+    },
+    {
+      heading: "Formatação feita no navegador",
+      body: "O texto é processado localmente quando você usa o conversor. Isso torna a ferramenta útil para revisar títulos, listas, nomes de arquivos, identificadores e pequenos blocos de texto."
+    }
+  ],
+  libras: [
+    {
+      heading: "Alfabeto manual em Libras",
+      body: "Esta página oferece um recurso visual introdutório para explorar letras e praticar soletração manual. Ela não substitui aulas, dicionários especializados, intérpretes ou materiais produzidos por profissionais e pela comunidade surda."
+    },
+    {
+      heading: "Use como apoio introdutório",
+      body: "Libras é uma língua completa, com gramática e vocabulário próprios, e não uma simples substituição letra por letra do português. A soletração manual é apenas uma parte do aprendizado."
+    }
+  ],
+  "termo-helper": [
+    {
+      heading: "Como filtrar palavras de cinco letras",
+      body: "Informe letras confirmadas, letras presentes em outra posição e letras que não aparecem na palavra. O filtro reduz a lista de combinações possíveis e ajuda a organizar as próximas tentativas."
+    },
+    {
+      heading: "A lista é uma ferramenta de apoio",
+      body: "A base de palavras pode não conter todas as formas aceitas por cada jogo. Use os resultados como candidatos e confirme a palavra diretamente no Termo, Letreco ou jogo equivalente."
+    }
+  ],
+  "stop-respostas": [
+    {
+      heading: "Palavras para Stop e Adedanha",
+      body: "Escolha uma letra e consulte sugestões separadas por categorias para ampliar o repertório durante partidas de Stop, Adedanha e Adedonha."
+    },
+    {
+      heading: "Combine pesquisa e repertório próprio",
+      body: "Algumas categorias dependem das regras adotadas pelo grupo. Antes da rodada, combine critérios de validade para nomes próprios, marcas, variações regionais e palavras pouco comuns."
+    }
+  ],
+  sobre: [
+    {
+      heading: "Como o portal é mantido",
+      body: "O LetraDiferentes.org reúne ferramentas de texto, símbolos, jogos de palavras e recursos visuais. As páginas são revisadas quando problemas de funcionamento, compatibilidade ou clareza são identificados."
+    }
+  ],
+  contato: [
+    {
+      heading: "Feedback, bugs e sugestões",
+      body: "O canal de contato pode ser usado para relatar erros reproduzíveis, sugerir novos estilos ou enviar observações sobre compatibilidade. O formulário prepara uma mensagem para ser concluída no aplicativo de e-mail do usuário."
+    }
+  ],
+  privacidade: [
+    {
+      heading: "Preferências e armazenamento local",
+      body: "Algumas ferramentas usam armazenamento local do navegador para manter favoritos, histórico ou configurações no próprio dispositivo. A política explica também o uso potencial de cookies e tecnologias de publicidade."
+    }
+  ],
+  termos: [
+    {
+      heading: "Condições de uso",
+      body: "Os termos descrevem as condições gerais para acessar e utilizar as ferramentas gratuitas do portal, incluindo limitações de responsabilidade e regras aplicáveis ao conteúdo gerado."
+    }
+  ]
+};
+
+const relatedSlugs = {
+  "": ["ff-nicks", "pequenas", "tatuagem", "grafite", "maiusculas", "moldes"],
+  tatuagem: ["grafite", "moldes", "", "pequenas"],
+  grafite: ["tatuagem", "moldes", "", "ff-nicks"],
+  pequenas: ["", "ff-nicks", "maiusculas", "tatuagem"],
+  moldes: ["tatuagem", "grafite", "maiusculas", "libras"],
+  "ff-nicks": ["", "pequenas", "maiusculas", "grafite"],
+  maiusculas: ["", "pequenas", "moldes", "stop-respostas"],
+  libras: ["moldes", "maiusculas", "", "stop-respostas"],
+  "termo-helper": ["stop-respostas", "maiusculas", "", "pequenas"],
+  "stop-respostas": ["termo-helper", "maiusculas", "", "libras"],
+  sobre: ["", "contato"],
+  contato: ["sobre", ""],
+  privacidade: ["termos", "sobre"],
+  termos: ["privacidade", "sobre"]
+};
+
+const toolSlugs = new Set(["", "tatuagem", "grafite", "pequenas", "moldes", "ff-nicks", "maiusculas", "libras", "termo-helper", "stop-respostas"]);
+
 const baseUrl = "https://letradiferentes.org";
 
 const escapeHtml = (value) =>
@@ -169,11 +315,24 @@ function replaceAlternate(html, hreflang, url) {
 }
 
 function staticFallback(route) {
-  const links = routes
-    .filter((item) => item.slug !== route.slug)
-    .slice(0, 9)
-    .map((item) => `<a href="/${item.slug}" style="color:#4F46E5;text-decoration:none;font-weight:700">${escapeHtml(item.h1)}</a>`)
-    .join(" · ");
+  const related = (relatedSlugs[route.slug] || [])
+    .map((slug) => routes.find((item) => item.slug === slug))
+    .filter(Boolean);
+
+  const links = related
+    .map((item) => {
+      const href = item.slug ? `/${item.slug}` : "/";
+      return `<a href="${href}" style="display:block;color:#4F46E5;text-decoration:none;font-weight:700;padding:10px 12px;border:1px solid #E2E8F0;border-radius:12px;background:#fff">${escapeHtml(item.h1)}</a>`;
+    })
+    .join("");
+
+  const guideSections = (staticGuides[route.slug] || [])
+    .map((section) => `
+      <section style="margin-top:26px">
+        <h2 style="font-size:20px;line-height:1.3;margin:0 0 8px;color:#0F172A">${escapeHtml(section.heading)}</h2>
+        <p style="font-size:14px;line-height:1.8;color:#475569;margin:0">${escapeHtml(section.body)}</p>
+      </section>`)
+    .join("");
 
   return `
     <div style="min-height:100vh;background:#F8FAFC;color:#0F172A;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:20px">
@@ -183,8 +342,12 @@ function staticFallback(route) {
       <main style="max-width:900px;margin:48px auto;background:#fff;border:1px solid #E2E8F0;border-radius:24px;padding:32px">
         <h1 style="font-size:32px;line-height:1.15;margin:0 0 14px">${escapeHtml(route.h1)}</h1>
         <p style="font-size:16px;line-height:1.7;color:#475569;margin:0 0 20px">${escapeHtml(route.summary)}</p>
-        <p style="font-size:14px;line-height:1.7;color:#64748B">A ferramenta interativa completa é carregada no navegador e processa as entradas localmente quando aplicável.</p>
-        <nav aria-label="Ferramentas relacionadas" style="margin-top:28px;padding-top:20px;border-top:1px solid #E2E8F0;font-size:13px;line-height:2">${links}</nav>
+        <p style="font-size:14px;line-height:1.7;color:#64748B">A interface interativa completa é carregada no navegador. Quando aplicável, a transformação do texto e as preferências da ferramenta são processadas localmente no dispositivo.</p>
+        ${guideSections}
+        <aside style="margin-top:30px;padding-top:22px;border-top:1px solid #E2E8F0">
+          <h2 style="font-size:18px;margin:0 0 12px">Ferramentas relacionadas</h2>
+          <nav aria-label="Ferramentas relacionadas" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px">${links}</nav>
+        </aside>
       </main>
     </div>`;
 }
@@ -206,26 +369,64 @@ for (const route of routes) {
   html = replaceAlternate(html, "pt", url);
   html = replaceAlternate(html, "x-default", url);
 
+  const graph = [
+    {
+      "@type": "WebSite",
+      "@id": `${baseUrl}/#website`,
+      name: "LetraDiferentes",
+      url: `${baseUrl}/`,
+      inLanguage: "pt-BR"
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${url}#webpage`,
+      url,
+      name: route.title,
+      description: route.description,
+      inLanguage: "pt-BR",
+      dateModified: "2026-10-07",
+      isPartOf: { "@id": `${baseUrl}/#website` }
+    }
+  ];
+
+  if (route.slug) {
+    graph.push({
+      "@type": "BreadcrumbList",
+      "@id": `${url}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Início",
+          item: `${baseUrl}/`
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: route.h1,
+          item: url
+        }
+      ]
+    });
+  }
+
+  if (toolSlugs.has(route.slug)) {
+    graph.push({
+      "@type": "WebApplication",
+      "@id": `${url}#app`,
+      name: route.h1,
+      url,
+      description: route.description,
+      applicationCategory: "UtilityApplication",
+      operatingSystem: "Any",
+      isAccessibleForFree: true,
+      inLanguage: "pt-BR"
+    });
+  }
+
   const structuredData = {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": `${baseUrl}/#website`,
-        name: "LetraDiferentes",
-        url: `${baseUrl}/`,
-        inLanguage: "pt-BR"
-      },
-      {
-        "@type": "WebPage",
-        "@id": `${url}#webpage`,
-        url,
-        name: route.title,
-        description: route.description,
-        inLanguage: "pt-BR",
-        isPartOf: { "@id": `${baseUrl}/#website` }
-      }
-    ]
+    "@graph": graph
   };
 
   html = html.replace(
