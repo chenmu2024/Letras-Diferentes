@@ -132,8 +132,8 @@ const SQUARE_MAP = {
 };
 
 const BLACK_SQUARE_MAP = {
-  ...makeMap(ALPHABET_UPPER, "🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆋"),
-  ...makeMap(ALPHABET_LOWER, "🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆋")
+  ...makeMap(ALPHABET_UPPER, "🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉"),
+  ...makeMap(ALPHABET_LOWER, "🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉")
 };
 
 const SMALL_CAPS_MAP = {
@@ -156,6 +156,12 @@ const WIDE_MAP = {
   ...makeMap(ALPHABET_UPPER, "ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ"),
   ...makeMap(ALPHABET_LOWER, "ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ"),
   ...makeMap(NUMBERS, "０１２３４５６７８９")
+};
+
+const MONOSPACE_MAP = {
+  ...makeMap(ALPHABET_UPPER, "𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉"),
+  ...makeMap(ALPHABET_LOWER, "𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣"),
+  ...makeMap(NUMBERS, "𝟶𝟷𝟸𝟹𝟺𝟻𝟼𝟽𝟾𝟿")
 };
 
 // Map based string generator helper
@@ -232,6 +238,12 @@ export const fontStyles: FontStyle[] = [
     transform: (text) => transformWithMap(text, BOLD_ITALIC_SERIF_MAP)
   },
   {
+    id: "sans-regular",
+    name: "Sem Serifa Moderna",
+    category: "Moderno",
+    transform: (text) => transformWithMap(text, SANS_SERIF_MAP)
+  },
+  {
     id: "sans-bold",
     name: "Sem Serifa Negrito",
     category: "Moderno",
@@ -294,6 +306,30 @@ export const fontStyles: FontStyle[] = [
     name: "E s p a ç a d o (Wide)",
     category: "Moderno",
     transform: (text) => transformWithMap(text, WIDE_MAP)
+  },
+  {
+    id: "monospace",
+    name: "Monoespaçado (Monospace)",
+    category: "Moderno",
+    transform: (text) => transformWithMap(text, MONOSPACE_MAP)
+  },
+  {
+    id: "underline",
+    name: "Sublinhado Simples",
+    category: "Decorativo",
+    transform: (text) => text.split("").map(c => c === " " ? c : c + "\u0332").join("")
+  },
+  {
+    id: "overline",
+    name: "Linha Superior",
+    category: "Decorativo",
+    transform: (text) => text.split("").map(c => c === " " ? c : c + "\u0305").join("")
+  },
+  {
+    id: "dot-above",
+    name: "Pontos Superiores",
+    category: "Decorativo",
+    transform: (text) => text.split("").map(c => c === " " ? c : c + "\u0307").join("")
   },
   {
     id: "strikethrough",
