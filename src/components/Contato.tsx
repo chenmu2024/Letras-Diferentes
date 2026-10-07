@@ -70,9 +70,9 @@ export default function Contato({ onNotify }: { onNotify: (msg: string) => void 
           <Mail className="w-3.5 h-3.5 text-[#4F46E5]" />
           <span>Fale Conosco</span>
         </div>
-        <h2 className="font-sans font-black text-3xl md:text-5xl text-[#0F172A] tracking-tight leading-tight">
+        <h1 className="font-sans font-black text-3xl md:text-5xl text-[#0F172A] tracking-tight leading-tight">
           Tem alguma <span className="bg-gradient-to-r from-indigo-600 to-pink-600 bg-clip-text text-transparent">Dúvida ou Sugestão?</span>
-        </h2>
+        </h1>
         <p className="text-sm md:text-base text-slate-500 max-w-2xl mx-auto leading-relaxed">
           Queremos ouvir você! Envie suas sugestões de novas fontes, reporte bugs ou compartilhe suas ideias para melhorar o <strong className="text-slate-800">letradiferentes.org</strong>.
         </p>
