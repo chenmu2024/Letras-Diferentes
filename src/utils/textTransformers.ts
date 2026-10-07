@@ -51,8 +51,8 @@ export const SUBSCRIPT_MAP = {
 
 // Various style maps
 const GOTHIC_MAP = {
-  ...makeMap(ALPHABET_UPPER, "𝔄𝔅𝔖𝔇𝔈𝔉𝔊𝔏ℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜angle_Z".replace("angle_Z", "ℨ")),
-  ...makeMap(ALPHABET_LOWER, "𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔨𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷")
+  ...makeMap(ALPHABET_UPPER, "𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ"),
+  ...makeMap(ALPHABET_LOWER, "𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷")
 };
 
 const GOTHIC_BOLD_MAP = {
@@ -72,7 +72,7 @@ const SCRIPT_MAP = {
 };
 
 const SCRIPT_BOLD_MAP = {
-  ...makeMap(ALPHABET_UPPER, "𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦X𝓨𝓩".replace("X", "𝓳")), // Fixed script
+  ...makeMap(ALPHABET_UPPER, "𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩"),
   ...makeMap(ALPHABET_LOWER, "𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃")
 };
 
@@ -111,7 +111,7 @@ const SANS_SERIF_ITALIC_MAP = {
 
 const SANS_SERIF_BOLD_ITALIC_MAP = {
   ...makeMap(ALPHABET_UPPER, "𝘼𝘽𝘾𝘿𝙀𝙁𝙂𝙃𝙄𝙅𝙆𝙇𝙈𝙉𝙊𝙋𝙌𝙍𝙎𝙏𝙐𝙑𝙒𝙓𝙔𝙕"),
-  ...makeMap(ALPHABET_LOWER, "𝙖𝙗𝙘𝙙𝙚𝙯𝙜𝙝𝙞𝙟𝙠𝙡𝙢𝙣𝙤𝙥𝙦𝙧𝙨𝙩𝙪𝙫𝙬𝙭𝙮𝙯".replace("𝙯", "𝖋"))
+  ...makeMap(ALPHABET_LOWER, "𝙖𝙗𝙘𝙙𝙚𝙛𝙜𝙝𝙞𝙟𝙠𝙡𝙢𝙣𝙤𝙥𝙦𝙧𝙨𝙩𝙪𝙫𝙬𝙭𝙮𝙯")
 };
 
 const BUBBLE_MAP = {
@@ -121,16 +121,14 @@ const BUBBLE_MAP = {
 };
 
 const BLACK_BUBBLE_MAP = {
-  ...makeMap(ALPHABET_UPPER, "🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩🅐 schedule🅒🅓🅔 Walker🅖🅈🅘🅙🅚L".replace(" schedule", "🅑").replace(" Walker", "🅕")), // Manual adjust
-  ...makeMap(ALPHABET_UPPER, "🅐🅑🅒🅓🅔F🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩"),
-  ...makeMap(ALPHABET_LOWER, "🅐🅑🅒🅓🅔F🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩"),
+  ...makeMap(ALPHABET_UPPER, "🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩"),
+  ...makeMap(ALPHABET_LOWER, "🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩"),
   ...makeMap(NUMBERS, "⓿❶❷❸❹❺❻❼❽❾")
 };
 
 const SQUARE_MAP = {
-  ...makeMap(ALPHABET_UPPER, "🄰🄱🄲🄳🄴🄵🄿🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🄱🅁🅂🅃🅄🅅🅆🅇🅈🅉"),
-  ...makeMap(ALPHABET_UPPER, "🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🄱🅁🅂🅃🅄🅅🅆🅇🅈🅉"),
-  ...makeMap(ALPHABET_LOWER, "🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🄱🅁🅂🅃🅄🅅🅆🅇🅈🅉"),
+  ...makeMap(ALPHABET_UPPER, "🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🅀🅁🅂🅃🅄🅅🅆🅇🅈🅉"),
+  ...makeMap(ALPHABET_LOWER, "🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🅀🅁🅂🅃🅄🅅🅆🅇🅈🅉"),
 };
 
 const BLACK_SQUARE_MAP = {
