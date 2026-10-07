@@ -165,15 +165,15 @@ export default function App() {
                   "name": "Quais redes sociais aceitam letras diferentes e letra diferentes?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Praticamente todas as redes modernas aceitam nossas letras diferentes e letra diferentes, incluindo Instagram, TikTok, Facebook, Twitter (X), Pinterest e WhatsApp. As letras diferentes e letra diferentes são ótimas para as biografias e descrições desses aplicativos."
+                    "text": "Os estilos podem ser copiados para redes sociais e mensageiros como Instagram, TikTok, Facebook, Pinterest e WhatsApp. A aparência e a aceitação de alguns caracteres variam conforme a fonte, o sistema e a plataforma."
                   }
                 },
                 {
                   "@type": "Question",
-                  "name": "É seguro usar letras diferentes e letra diferentes em jogos?",
+                  "name": "Posso usar letras diferentes e letra diferentes em jogos?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Sim, o uso de letras diferentes e letra diferentes geradas em nosso site é 100% livre e seguro. As letras diferentes e letra diferentes não representam hacks, pois fazem parte das tabelas Unicode originais suportadas pelas desenvolvedoras de jogos como a Garena ou Epic Games."
+                    "text": "Você pode testar os caracteres gerados em nicks e perfis de jogos. Eles são caracteres de texto e símbolos, mas cada jogo define seus próprios limites de tamanho e caracteres aceitos, então algumas combinações podem ser recusadas."
                   }
                 },
                 {
@@ -1083,7 +1083,7 @@ export default function App() {
             </div>
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-            <p>© {new Date().getFullYear()} LetraDiferentes (letradiferentes.org) • Ferramentas de Estilo 100% Modulares &amp; Seguras.</p>
+            <p>© {new Date().getFullYear()} LetraDiferentes (letradiferentes.org) • Ferramentas gratuitas de texto e estilo para uso no navegador.</p>
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-slate-400">
               <a href="/" className="hover:text-indigo-600 transition-colors cursor-pointer" onClick={(e) => { e.preventDefault(); handleTabChange("home"); }}>Início</a>
               <span className="text-slate-200">•</span>
