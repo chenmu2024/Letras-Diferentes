@@ -811,9 +811,9 @@ export default function App() {
               </div>
               <div className="flex flex-col">
                 <div className="flex items-center gap-1.5">
-                  <h1 className="font-sans font-black text-[#0F172A] text-lg tracking-tight group-hover:text-indigo-600 transition-colors leading-none">
+                  <div className="font-sans font-black text-[#0F172A] text-lg tracking-tight group-hover:text-indigo-600 transition-colors leading-none">
                     LetraDiferentes
-                  </h1>
+                  </div>
                   <span className="bg-gradient-to-r from-pink-500 to-violet-600 text-white text-[9px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded-md leading-none shadow-xs">
                     ORG
                   </span>
