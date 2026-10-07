@@ -173,9 +173,9 @@ export default function MoldesLetras({ onNotify }: MoldesLetrasProps) {
           <Layout className="w-3.5 h-3.5 text-indigo-500 animate-pulse" />
           <span>Moldes de Impressão &amp; Atividades Pedagógicas</span>
         </div>
-        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-[#0F172A] tracking-tight leading-tight">
+        <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-[#0F172A] tracking-tight leading-tight">
           Molde de Letras para Imprimir: Baixe seu Molde Letras Grátis
-        </h2>
+        </h1>
         <p className="text-xs md:text-sm text-slate-500 max-w-2xl leading-relaxed font-semibold">
           Precisa de um excelente <strong>molde de letras</strong> de alta qualidade? Nosso gerador permite criar qualquer <strong>molde de letras para imprimir</strong> em formato PDF. Seja um <strong>molde letras</strong> grande para artesanato em EVA, feltro ou cartazes, ou um <strong>molde de letras</strong> pontilhado para atividades escolares de caligrafia infantil, aqui você configura tudo em segundos. Crie agora seu próprio <strong>molde letras</strong> personalizado e facilite seus trabalhos manuais e pedagógicos.
         </p>
