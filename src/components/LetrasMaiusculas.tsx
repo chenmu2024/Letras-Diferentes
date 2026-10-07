@@ -329,9 +329,9 @@ export default function LetrasMaiusculas({ onNotify }: LetrasMaiusculasProps) {
           <AlignLeft className="w-3.5 h-3.5 text-indigo-500 animate-pulse" />
           <span>Conversor Profissional de Letras Maiúsculas e Letra Maiúscula</span>
         </div>
-        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-[#0F172A] tracking-tight leading-tight">
+        <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-[#0F172A] tracking-tight leading-tight">
           Letras <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-pink-500 to-violet-600">Maiúsculas</span> &amp; Minúsculas
-        </h2>
+        </h1>
         <p className="text-xs md:text-sm text-slate-500 max-w-2xl leading-relaxed font-semibold">
           Ferramenta avançada de <strong>letra maiúscula</strong> para formatar, limpar e converter textos instantaneamente. Mude para <strong>letras maiúsculas</strong> de forma simples, altere capitalizações de frases para <strong>letra maiúscula</strong>, limpe linhas ou analise métricas de <strong>letras maiúsculas</strong> em tempo real de forma totalmente segura.
         </p>
