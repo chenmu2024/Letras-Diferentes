@@ -138,16 +138,8 @@ export default function App() {
               "@type": "WebSite",
               "@id": "https://letradiferentes.org/#website",
               "name": "Letras Diferentes",
-              "url": "https://letradiferentes.org",
-              "potentialAction": {
-                "@type": "SearchAction",
-                "target": {
-                  "@type": "EntryPoint",
-                  "urlTemplate": "https://letradiferentes.org/?s={search_term_string}"
-                },
-                "query-input": "required name=search_term_string"
-              }
-            },
+              "url": "https://letradiferentes.org"
+},
             {
               "@type": "WebApplication",
               "name": "LetraDiferentes",
@@ -385,7 +377,7 @@ export default function App() {
       },
       maiusculas: {
         title: "Letras Maiúsculas e Minúsculas - Conversor de Texto Online",
-        desc: "Converta seu text para caixa alta, caixa baixa, alternada ou letras maiúsculas em segundos. Ideal para formatar títulos e parágrafos.",
+        desc: "Converta seu texto para caixa alta, caixa baixa, alternada e outros formatos em segundos. Ideal para títulos, listas e parágrafos.",
         schema: {
           "@context": "https://schema.org",
           "@graph": [
@@ -419,7 +411,7 @@ export default function App() {
       },
       libras: {
         title: "Letras em Libras - Alfabeto Manual de Sinais",
-        desc: "Aprenda e converta palavras para a Língua Brasileira de Sinais (Libras). Tabela visual completa do alfabeto de sinais para estudantes e educadores.",
+        desc: "Explore um recurso visual introdutório sobre o alfabeto manual em Libras e pratique a soletração de letras e palavras.",
         schema: {
           "@context": "https://schema.org",
           "@graph": [
@@ -453,7 +445,7 @@ export default function App() {
       },
       "termo-helper": {
         title: "Termo Helper - Solucionador e Dicas do Jogo Termo",
-        desc: "Descubra as palavras possíveis para o jogo Termo, Contexto e Wordle. Filtre por letras certas, erradas e posições para vencer todas as rodadas.",
+        desc: "Encontre palavras possíveis para Termo, Letreco e jogos de cinco letras. Filtre letras certas, presentes, ausentes e posições.",
         schema: {
           "@context": "https://schema.org",
           "@graph": [
@@ -521,7 +513,7 @@ export default function App() {
       },
       sobre: {
         title: "Sobre Nós - LetraDiferentes (letradiferentes.org)",
-        desc: "Conheça a história, missão e valores do portal LetraDiferentes.org, a maior plataforma gratuita de utilitários e geradores de fontes do Brasil.",
+        desc: "Conheça a proposta, os critérios de manutenção e os princípios editoriais do portal gratuito LetraDiferentes.org.",
         schema: {
           "@context": "https://schema.org",
           "@type": "AboutPage",
@@ -541,7 +533,7 @@ export default function App() {
       },
       privacidade: {
         title: "Política de Privacidade - LetraDiferentes",
-        desc: "Leia nossa política de privacidade. Saiba como o letradiferentes.org garante a segurança, transparência e conformidade com a LGPD no uso local.",
+        desc: "Leia a política de privacidade do letradiferentes.org e saiba como preferências locais, cookies e tecnologias de publicidade podem ser utilizados.",
         schema: {
           "@context": "https://schema.org",
           "@type": "WebPage",
@@ -768,6 +760,27 @@ export default function App() {
   }, [searchTerm, tabs]);
 
   const activeTabItem = tabs.find((t) => t.id === activeTab) || tabs[0];
+
+  const relatedToolMap: Record<TabId, TabId[]> = {
+    home: ["ff-nicks", "pequenas", "tatuagem", "grafite", "maiusculas", "moldes"],
+    tatuagem: ["grafite", "moldes", "home", "pequenas"],
+    grafite: ["tatuagem", "moldes", "home", "ff-nicks"],
+    pequenas: ["home", "ff-nicks", "maiusculas", "tatuagem"],
+    moldes: ["tatuagem", "grafite", "maiusculas", "libras"],
+    "ff-nicks": ["home", "pequenas", "maiusculas", "grafite"],
+    maiusculas: ["home", "pequenas", "moldes", "stop-respostas"],
+    libras: ["moldes", "maiusculas", "home", "stop-respostas"],
+    "termo-helper": ["stop-respostas", "maiusculas", "home", "pequenas"],
+    "stop-respostas": ["termo-helper", "maiusculas", "home", "libras"],
+    sobre: ["home", "contato"],
+    contato: ["sobre", "home"],
+    privacidade: ["termos", "sobre"],
+    termos: ["privacidade", "sobre"],
+  };
+
+  const relatedTabs = (relatedToolMap[activeTab] || [])
+    .map((id) => tabs.find((tab) => tab.id === id))
+    .filter((tab): tab is TabItem => Boolean(tab));
 
   return (
     <div className="min-h-screen bg-[#FBFBFE] text-[#0F172A] font-sans antialiased flex flex-col relative selection:bg-indigo-500/10 selection:text-indigo-900">
@@ -1010,6 +1023,42 @@ export default function App() {
             {activeTab === "termos" && <TermosServico />}
           </Suspense>
         </div>
+
+        {relatedTabs.length > 0 && (
+          <aside className="mt-12 pt-8 border-t border-slate-200/70" aria-labelledby="related-tools-title">
+            <div className="flex items-end justify-between gap-4 mb-4">
+              <div>
+                <p className="text-[10px] font-mono uppercase tracking-widest text-indigo-500 font-bold">Navegação relacionada</p>
+                <h2 id="related-tools-title" className="text-lg md:text-xl font-black text-slate-900 mt-1">
+                  Ferramentas relacionadas
+                </h2>
+              </div>
+              <a
+                href="/"
+                onClick={(e) => { e.preventDefault(); handleTabChange("home"); }}
+                className="text-xs font-bold text-indigo-600 hover:text-indigo-800"
+              >
+                Ver todas
+              </a>
+            </div>
+            <nav aria-label="Ferramentas relacionadas" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              {relatedTabs.map((tab) => (
+                <a
+                  key={tab.id}
+                  href={tab.id === "home" ? "/" : `/${tab.id}`}
+                  onClick={(e) => { e.preventDefault(); handleTabChange(tab.id); }}
+                  className="group rounded-2xl bg-white border border-slate-200/80 p-4 hover:border-indigo-200 hover:shadow-sm transition-all"
+                >
+                  <div className="flex items-center gap-2.5 mb-2">
+                    <span className="text-indigo-600 bg-indigo-50 rounded-lg p-1.5">{tab.icon}</span>
+                    <span className="font-extrabold text-sm text-slate-800 group-hover:text-indigo-700">{tab.label}</span>
+                  </div>
+                  <p className="text-[11px] text-slate-500 leading-relaxed">{tab.sub}</p>
+                </a>
+              ))}
+            </nav>
+          </aside>
+        )}
 
         {/* Global Responsive AdSense Display Unit placeholder */}
         <AdSensePlaceholder slot="letras-home-bottom-responsive" className="mt-12" />
