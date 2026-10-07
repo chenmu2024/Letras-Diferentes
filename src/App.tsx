@@ -130,7 +130,7 @@ export default function App() {
     const seoConfig: Record<TabId, { title: string; desc: string; schema: any }> = {
       home: {
         title: "Letras Diferentes - Gerador de Fontes e Letras Bonitas",
-        desc: "O maior gerador de letras diferentes e bonitas online. Copie e cole dezenas de fontes elegantes no Instagram, TikTok, WhatsApp e mídias sociais.",
+        desc: "Gerador gratuito de letras diferentes e bonitas. Copie e cole dezenas de estilos Unicode no Instagram, TikTok, WhatsApp e mídias sociais.",
         schema: {
           "@context": "https://schema.org",
           "@graph": [
@@ -152,7 +152,7 @@ export default function App() {
               "@type": "WebApplication",
               "name": "LetraDiferentes",
               "url": "https://letradiferentes.org",
-              "description": "O maior gerador de letras diferentes e bonitas online. Copie e cole dezenas de fontes elegantes no Instagram, TikTok, WhatsApp e mídias sociais.",
+              "description": "Gerador gratuito de letras diferentes e bonitas. Copie e cole dezenas de estilos Unicode no Instagram, TikTok, WhatsApp e mídias sociais.",
               "applicationCategory": "UtilityApplication",
               "operatingSystem": "All",
               "browserRequirements": "Requires JavaScript. Requires HTML5."
@@ -603,6 +603,9 @@ export default function App() {
       }
       metaKeywords.setAttribute("content", keywordsMap[activeTab] || keywordsMap.home);
 
+      // Remove the build-time fallback schema after React takes control to avoid stale route metadata during client navigation.
+      document.getElementById("static-seo-jsonld")?.remove();
+
       // 3. Update JSON-LD structured data script
       let scriptTag = document.getElementById("seo-jsonld") as HTMLScriptElement;
       if (!scriptTag) {
@@ -1022,7 +1025,7 @@ export default function App() {
               </div>
               <div>
                 <div className="text-sm font-bold text-slate-800">letradiferentes.org</div>
-                <div className="text-xs text-slate-400">O maior e mais seguro portal de tipografias e geradores do Brasil.</div>
+                <div className="text-xs text-slate-400">Portal gratuito de tipografias, símbolos e geradores para língua portuguesa.</div>
               </div>
             </div>
             <div className="flex items-center gap-2.5 text-xs text-[#4F46E5] bg-indigo-50/50 border border-indigo-100/60 rounded-full px-4.5 py-2 font-semibold">
