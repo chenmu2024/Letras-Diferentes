@@ -8,7 +8,8 @@
     "build": "vite build && node scripts/generate-static-routes.mjs",
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
-    "check": "tsc --noEmit"
+    "check": "tsc --noEmit",
+    "test:unicode": "tsx scripts/test-text-transformers.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",
