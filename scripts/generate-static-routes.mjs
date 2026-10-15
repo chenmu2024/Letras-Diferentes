@@ -321,7 +321,7 @@ function staticFallback(route) {
 
   const links = related
     .map((item) => {
-      const href = item.slug ? `/${item.slug}` : "/";
+      const href = item.slug ? `/${item.slug}/` : "/";
       return `<a href="${href}" style="display:block;color:#4F46E5;text-decoration:none;font-weight:700;padding:10px 12px;border:1px solid #E2E8F0;border-radius:12px;background:#fff">${escapeHtml(item.h1)}</a>`;
     })
     .join("");
@@ -353,7 +353,7 @@ function staticFallback(route) {
 }
 
 for (const route of routes) {
-  const url = route.slug ? `${baseUrl}/${route.slug}` : `${baseUrl}/`;
+  const url = route.slug ? `${baseUrl}/${route.slug}/` : `${baseUrl}/`;
   let html = sourceHtml;
 
   html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(route.title)}</title>`);

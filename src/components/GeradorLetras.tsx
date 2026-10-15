@@ -761,7 +761,7 @@ export default function GeradorLetras({ onNotify, onNavigate }: GeradorLetrasPro
           {toolDirectory.map((tool) => (
             <a
               key={tool.id}
-              href={tool.id === "home" ? "/" : `/${tool.id}`}
+              href={tool.id === "home" ? "/" : `/${tool.id}/`}
               onClick={(e) => {
                 e.preventDefault();
                 onNavigate && onNavigate(tool.id);
