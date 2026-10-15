@@ -33,15 +33,15 @@ export default function SeoContent({ onNavigate }: SeoContentProps) {
   ];
 
   const internalLinks = [
-    { name: "Nicks Free Fire & Símbolos ꧁ ꧂", tab: "ff-nicks", path: "/ff-nicks", tag: "Gaming" },
-    { name: "Letras para Tatuagem & Caligrafia", tab: "tatuagem", path: "/tatuagem", tag: "Design" },
-    { name: "Letras de Grafite Street Art", tab: "grafite", path: "/grafite", tag: "Arte" },
-    { name: "Moldes de Letras para Imprimir A4", tab: "moldes", path: "/moldes", tag: "Escolar" },
-    { name: "Letras Pequenas e Sobrescrito ˢᵒᵐᵉ", tab: "pequenas", path: "/pequenas", tag: "Bio" },
-    { name: "Letras Maiúsculas e Minúsculas", tab: "maiusculas", path: "/maiusculas", tag: "Texto" },
-    { name: "Alfabeto em Libras (Língua de Sinais)", tab: "libras", path: "/libras", tag: "Inclusão" },
-    { name: "Solucionador de Termo & Wordle", tab: "termo-helper", path: "/termo-helper", tag: "Jogos" },
-    { name: "Respostas Stop / Adedanha de A a Z", tab: "stop-respostas", path: "/stop-respostas", tag: "Dicionário" },
+    { name: "Nicks Free Fire & Símbolos ꧁ ꧂", tab: "ff-nicks", path: "/ff-nicks/", tag: "Gaming" },
+    { name: "Letras para Tatuagem & Caligrafia", tab: "tatuagem", path: "/tatuagem/", tag: "Design" },
+    { name: "Letras de Grafite Street Art", tab: "grafite", path: "/grafite/", tag: "Arte" },
+    { name: "Moldes de Letras para Imprimir A4", tab: "moldes", path: "/moldes/", tag: "Escolar" },
+    { name: "Letras Pequenas e Sobrescrito ˢᵒᵐᵉ", tab: "pequenas", path: "/pequenas/", tag: "Bio" },
+    { name: "Letras Maiúsculas e Minúsculas", tab: "maiusculas", path: "/maiusculas/", tag: "Texto" },
+    { name: "Alfabeto em Libras (Língua de Sinais)", tab: "libras", path: "/libras/", tag: "Inclusão" },
+    { name: "Solucionador de Termo & Wordle", tab: "termo-helper", path: "/termo-helper/", tag: "Jogos" },
+    { name: "Respostas Stop / Adedanha de A a Z", tab: "stop-respostas", path: "/stop-respostas/", tag: "Dicionário" },
   ];
 
   const handleLinkClick = (e: React.MouseEvent, tab: string, path: string) => {

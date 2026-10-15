@@ -29,7 +29,7 @@ for (const slug of routes) {
 
   assert.ok(fs.existsSync(file), `Missing generated route: /${slug}`);
   const html = fs.readFileSync(file, "utf8");
-  const expectedUrl = slug ? `${baseUrl}/${slug}` : `${baseUrl}/`;
+  const expectedUrl = slug ? `${baseUrl}/${slug}/` : `${baseUrl}/`;
 
   const title = html.match(/<title>([^<]+)<\/title>/i)?.[1]?.trim();
   assert.ok(title, `Missing title on /${slug}`);
@@ -41,6 +41,16 @@ for (const slug of routes) {
 
   const canonical = html.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/i)?.[1];
   assert.equal(canonical, expectedUrl, `Wrong canonical on /${slug}`);
+
+  for (const language of ["pt", "x-default"]) {
+    assert.ok(html.includes(`hreflang="${language}" href="${expectedUrl}"`), `Wrong ${language} alternate on /${slug}`);
+  }
+  for (const property of ["og:url", "twitter:url"]) {
+    assert.ok(html.includes(`${property}" content="${expectedUrl}"`), `Wrong ${property} on /${slug}`);
+  }
+  for (const match of html.matchAll(/<a\b[^>]*\bhref=["'](\/[^"'#?]*)["']/gi)) {
+    assert.ok(match[1].endsWith("/"), `Internal page link must end with / on /${slug}: ${match[1]}`);
+  }
 
   const h1Count = (html.match(/<h1\b/gi) || []).length;
   assert.equal(h1Count, 1, `Expected exactly one H1 on /${slug}, found ${h1Count}`);
@@ -66,7 +76,7 @@ const sitemapPath = path.resolve("dist", "sitemap.xml");
 assert.ok(fs.existsSync(sitemapPath), "Missing sitemap.xml in production output.");
 const sitemap = fs.readFileSync(sitemapPath, "utf8");
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
-const expectedUrls = routes.map((slug) => slug ? `${baseUrl}/${slug}` : `${baseUrl}/`);
+const expectedUrls = routes.map((slug) => slug ? `${baseUrl}/${slug}/` : `${baseUrl}/`);
 assert.equal(new Set(sitemapUrls).size, sitemapUrls.length, "Sitemap contains duplicate URLs.");
 assert.deepEqual([...sitemapUrls].sort(), [...expectedUrls].sort(), "Sitemap URLs do not match generated routes.");
 
